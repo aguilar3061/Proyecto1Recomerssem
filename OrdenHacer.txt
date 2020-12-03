@@ -1,0 +1,6 @@
+
+
+albert 	--> menu
+arnau 	--> principal
+dani 	--> registro, noticias
+carlos 	--> ofertas, juegos
