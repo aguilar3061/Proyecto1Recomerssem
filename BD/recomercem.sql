@@ -6,6 +6,9 @@
 -- Temps de generació: 04-12-2020 a les 13:24:54
 -- Versió del servidor: 10.4.14-MariaDB
 -- Versió de PHP: 7.4.10
+DROP DATABASE if exists BDrecomencem;
+CREATE DATABASE BDrecomencem;
+USE BDrecomencem;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
