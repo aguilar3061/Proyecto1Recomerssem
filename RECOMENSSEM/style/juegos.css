@@ -1,0 +1,19 @@
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#puntos{
+    
+    text-align: center; 
+    margin: 3% 
+
+}
+
+img{
+    margin-top: 5px;
+    margin-right: 10%;
+}

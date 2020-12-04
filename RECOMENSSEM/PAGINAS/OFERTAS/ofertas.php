@@ -4,7 +4,7 @@
     require_once("..\..\php_librarys\bd.php");
 	$listaOfertas = selectOferta();
 
-	$admin = true;
+	$admin = false;
 	
 ?>
 
@@ -35,8 +35,8 @@
 				foreach ($listaOfertas as $oferta){
 			?>
 
-				<div class="col mb-4">
-					<div class="card h-100" >
+				<div class="col mb-4 "  onclick="" style="cursor: pointer;">
+					<div class="card h-100 bg-light" >
 						<center>
 							<img src="/RECOMENSSEM/media/IMGoferta.png" width="80%" > 
 
