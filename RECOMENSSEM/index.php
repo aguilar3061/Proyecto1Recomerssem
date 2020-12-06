@@ -19,9 +19,22 @@ include_once('php_partials/menu.php');
 <body>
     <!-- Contenedor principal -->
     <div class="container mt-3 border border-secondary" style="height: 83%;">
-        <div class="row" style="display: block;">
-            <button type="button" class="btn btn-outline-primary">Información</button>
-            <button type="button" class="btn btn-outline-secondary">Juegos</button>
+        <div class="row w-100 align-items-center" style="margin-top: 15%">
+            <div class="col text-center">
+                <a href="#" class="btn btn-danger regular-button w-50" style="height: 100px; font-size: 30px; line-height:85px;"> Información </a>
+            </div>
+        </div>
+
+        <div class="row w-100 align-items-center mt-4">
+            <div class="col text-center">
+                <a href="PAGINAS/JUEGOS/juegos.php" class="btn btn-danger regular-button w-50" style="height: 100px; font-size: 30px; line-height:85px;"> Juegos </a>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="" style="width: 71%; text-align:right; font-size:20px;">
+                <a href="#">Ayuda</a>
+            </div>
         </div>
     </div>
 
