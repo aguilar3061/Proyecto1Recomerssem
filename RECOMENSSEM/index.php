@@ -17,7 +17,11 @@ include_once('php_partials/menu.php');
 </head>
 
 <body>
-    <h1>Funciona me cago en dios</h1>
+    <!-- Contenedor principal -->
+    <div class="container mt-3">
+        <button type="button" class="btn btn-outline-primary w-50">Información</button>
+        <button type="button" class="btn btn-outline-secondary w-50">Juegos</button>
+    </div>
 
 
 </body>
