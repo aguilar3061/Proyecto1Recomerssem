@@ -18,9 +18,11 @@ include_once('php_partials/menu.php');
 
 <body>
     <!-- Contenedor principal -->
-    <div class="container mt-3 border border-secondary">
-        <button type="button" class="btn btn-outline-primary w-50">Información</button>
-        <button type="button" class="btn btn-outline-secondary w-50">Juegos</button>
+    <div class="container mt-3 border border-secondary" style="height: 83%;">
+        <div class="" style="display: block;">
+            <button type="button" class="btn btn-outline-primary">Información</button>
+            <button type="button" class="btn btn-outline-secondary">Juegos</button>
+        </div>
     </div>
 
 
