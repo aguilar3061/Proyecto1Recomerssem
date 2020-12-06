@@ -1,7 +1,8 @@
 
 
 <?php
-    require_once("..\..\php_librarys\bd.php");
+	include_once("../../php_partials/menu.php");
+    require_once("../../php_librarys/bd.php");
 	$listaOfertas = selectOferta();
 
 	$admin = false;
