@@ -1,0 +1,18 @@
+body{
+	
+	background-image: url("../media/cocinamuebles.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;  
+	background-size: 100% 100%;
+	
+}
+
+#nevera{
+	width: 25%;
+	height: 25%;
+	position: relative; /*hace que muevas relativamente su posición*/
+	top: 400px; /*Pixeles arriba de su posición natural (puede ser negativo)*/
+	left: 2000px; /*Pixeles a la derecha de su posición natural*/
+	
+}
+	
