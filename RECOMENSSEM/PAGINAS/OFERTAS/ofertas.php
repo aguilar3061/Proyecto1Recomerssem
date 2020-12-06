@@ -1,7 +1,8 @@
 
 
 <?php
-    require_once("..\..\php_librarys\bd.php");
+	include_once("../../php_partials/menu.php");
+    require_once("../../php_librarys/bd.php");
 	$listaOfertas = selectOferta();
 
 	$admin = false;
@@ -21,6 +22,7 @@
 
        <!-- ICONOS -->
 	   <link href="../../FONTAWESOME/fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet"> <!--load all styles -->
+	   
 
 
 	</head>
