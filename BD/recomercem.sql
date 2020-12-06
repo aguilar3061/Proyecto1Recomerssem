@@ -236,6 +236,10 @@ ALTER TABLE `oferta`
 --
 ALTER TABLE `tienda`
   MODIFY `idTienda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  
+  
+ALTER TABLE `usuario`
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restriccions per a les taules bolcades
