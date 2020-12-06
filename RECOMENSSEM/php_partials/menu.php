@@ -9,7 +9,7 @@
 
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
-        <a class="navbar-brand"  href="">Mercat del ninot</a>
+        <a class="navbar-brand"  href="/RECOMENSSEM/index.php">Mercat del ninot</a>
       </li>
     </ul>
    
@@ -20,7 +20,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="" id="iniciarSesion">Iniciar sesion</a>
-          <a class="dropdown-item" href="" id="Registrarse">Registrarse</a>
+          <a class="dropdown-item" href="/RECOMENSSEM/PAGINAS/REGISTRO/registro.php" id="Registrarse">Registrarse</a>
         </div>
       </li>
     </ul>
