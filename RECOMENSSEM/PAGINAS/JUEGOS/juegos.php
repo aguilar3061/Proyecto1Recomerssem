@@ -30,7 +30,7 @@ include_once("../../php_partials/menu.php");
 				<div class="col mb-2 " onclick="" style="cursor: pointer;">
 					<div class="card  bg-success"  >
 							
-							<img src="/RECOMENSSEM/media/IMGjuego.svg" alt="Enviar formulario" width="30%" height="50%" style=" display:block; margin:auto;">
+							<img src="/RECOMENSSEM/media/IMGjuego.svg" alt="Enviar formulario" width="20%" height="40%" style=" display:block; margin:auto;">
 					
 							<div class="card-body">
 								<strong> Juego 1</strong>   
@@ -43,7 +43,7 @@ include_once("../../php_partials/menu.php");
 				<div class="col mb-2 " onclick="" style="cursor: pointer;">
 					<div class="card  bg-success"  >
 							
-							<img src="/RECOMENSSEM/media/IMGjuego.svg" alt="Enviar formulario" width="30%" height="50%" style=" display:block; margin:auto;">
+							<img src="/RECOMENSSEM/media/IMGjuego.svg" alt="Enviar formulario" width="20%" height="40%" style=" display:block; margin:auto;">
 					
 							<div class="card-body">
 								<strong> Juego 2</strong>   
@@ -56,7 +56,7 @@ include_once("../../php_partials/menu.php");
 				<div class="col mb-2 " onclick="" style="cursor: pointer;">
 					<div class="card  bg-success"  >
 							
-							<img src="/RECOMENSSEM/media/IMGjuego.svg" alt="Enviar formulario" width="30%" height="50%" style=" display:block; margin:auto;">
+							<img src="/RECOMENSSEM/media/IMGjuego.svg" alt="Enviar formulario" width="20%" height="40%" style=" display:block; margin:auto;">
 					
 							<div class="card-body">
 								<strong> Juego 3</strong>   
@@ -69,7 +69,7 @@ include_once("../../php_partials/menu.php");
 				<div class="col mb-2 " onclick="" style="cursor: pointer;">
 					<div class="card  bg-success"  >
 							
-							<img src="/RECOMENSSEM/media/IMGjuego.svg" alt="Enviar formulario" width="30%" height="50%" style=" display:block; margin:auto;">
+							<img src="/RECOMENSSEM/media/IMGjuego.svg" alt="Enviar formulario" width="20%" height="40%" style=" display:block; margin:auto;">
 					
 							<div class="card-body">
 								<strong> Juego 4</strong>   
@@ -83,13 +83,17 @@ include_once("../../php_partials/menu.php");
 				
 			?>
 
-		</div>
 		
+
+
+		</div>
+
 
 		<div id="puntos">
 			<h3> 	Puntos 0 	<?php  ?> &nbsp </h3>
-			<img src="/RECOMENSSEM/media/IMGpuntos.svg" width="30px" height="30px"  >
 		</div>
+
+	
 
 		
 
