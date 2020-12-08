@@ -53,6 +53,36 @@
 
         return $resultado;
     }
+    function InsertarUsuarios($nombre,$apellidos,$correo,$contraseña){
+
+        $conexion = openBD();
+
+        $sentenciaText = "insert into usuario (nombre,cognoms,mail,contrasenya,admin,puntosObtenidos) values (:nombre,:cognoms,:mail,:contrasenya,0,0) ";
+        $sentencia =$conexion->prepare($sentenciaText);
+        $sentencia->bindParam(":nombre",    $nombre);
+        $sentencia->bindParam(":cognoms",    $apellidos);
+        $sentencia->bindParam(":mail",    $correo);
+        $sentencia->bindParam(":contrasenya",    $contraseña);
+        $sentencia->execute();
+
+        $conexion = closeBD();
+
+    }
+
+    function SelectInfo(){
+        $conexion = openBD();
+
+        $sentenciaText = "
+        select * from infonoticia
+        ";
+        $sentencia =$conexion->prepare($sentenciaText);
+        $sentencia->execute();
+        $resultado = $sentencia->fetchAll();
+
+        $conexion = closeBD();
+
+        return $resultado;
+    }
 
 
 
