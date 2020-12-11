@@ -21,7 +21,7 @@ include_once('php_partials/menu.php');
     <div class="container mt-3 border border-secondary" style="height: 83%;">
         <div class="row w-100 align-items-center" style="margin-top: 15%">
             <div class="col text-center">
-                <a href="#" class="btn btn-danger regular-button w-50" style="height: 100px; font-size: 30px; line-height:85px;"> Información </a>
+                <a href="PAGINAS/INFO_NOTICIAS/infonoti.php" class="btn btn-danger regular-button w-50" style="height: 100px; font-size: 30px; line-height:85px;"> Información </a>
             </div>
         </div>
 
