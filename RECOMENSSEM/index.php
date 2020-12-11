@@ -18,29 +18,37 @@ include_once('php_partials/menu.php');
 
 <body>
     <!-- Contenedor principal -->
-    <div class="container mt-3 border border-secondary" style="height: 83%;">
-        <div class="row w-100 align-items-center" style="margin-top: 15%">
-            <div class="col text-center">
-                <a href="PAGINAS/INFO_NOTICIAS/infonoti.php" class="btn btn-danger regular-button w-50" style="height: 100px; font-size: 30px; line-height:85px;"> Información </a>
+    <div class="container mt-3 border border-secondary" style="height: 80vh; min-height:600px;">
+        <div style="position: relative;
+                    top:50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    text-align: center;">
+                    
+            <div class="row w-100 align-items-center">
+                <div class="col text-center">
+                    <a href="PAGINAS/INFO_NOTICIAS/infonoti.php" class="btn btn-danger regular-button w-50" style="height: 100px; font-size: 30px; line-height:85px;"> Información </a>
+                </div>
             </div>
-        </div>
 
-        <div class="row w-100 align-items-center mt-4">
-            <div class="col text-center">
-                <a href="PAGINAS/JUEGOS/juegos.php" class="btn btn-danger regular-button w-50" style="height: 100px; font-size: 30px; line-height:85px;"> Juegos </a>
+            <div class="row w-100 align-items-center mt-4">
+                <div class="col text-center">
+                    <a href="PAGINAS/JUEGOS/juegos.php" class="btn btn-danger regular-button w-50" style="height: 100px; font-size: 30px; line-height:85px;"> Juegos </a>
+                </div>
             </div>
-        </div>
 
-        <div class="row w-100 align-items-center mt-4" style="display: none">
-            <div class="col text-center">
-                <a href="PAGINAS/OFERTAS/ofertas.php" class="btn btn-danger regular-button w-50" style="height: 100px; font-size: 30px; line-height:85px;"> Ofertas </a>
+            <div class="row w-100 align-items-center mt-4" style="display: none">
+                <div class="col text-center">
+                    <a href="PAGINAS/OFERTAS/ofertas.php" class="btn btn-danger regular-button w-50" style="height: 100px; font-size: 30px; line-height:85px;"> Ofertas </a>
+                </div>
             </div>
-        </div>
 
-        <div class="row mt-4">
-            <div class="" style="width: 71%; text-align:right; font-size:20px;">
-                <a href="#">Ayuda</a>
+            <div class="row mt-4">
+                <div class="" style="width: 71%; text-align:right; font-size:20px;">
+                    <a href="#">Ayuda</a>
+                </div>
             </div>
+
         </div>
     </div>
 
