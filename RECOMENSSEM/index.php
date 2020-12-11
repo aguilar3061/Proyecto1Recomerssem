@@ -31,6 +31,12 @@ include_once('php_partials/menu.php');
             </div>
         </div>
 
+        <div class="row w-100 align-items-center mt-4" style="display: none">
+            <div class="col text-center">
+                <a href="PAGINAS/OFERTAS/ofertas.php" class="btn btn-danger regular-button w-50" style="height: 100px; font-size: 30px; line-height:85px;"> Ofertas </a>
+            </div>
+        </div>
+
         <div class="row mt-4">
             <div class="" style="width: 71%; text-align:right; font-size:20px;">
                 <a href="#">Ayuda</a>
