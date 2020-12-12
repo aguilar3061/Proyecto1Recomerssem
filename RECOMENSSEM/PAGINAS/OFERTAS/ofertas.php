@@ -78,19 +78,19 @@
 
 
 
-	
+		
 
-	<?php
-		if($admin == true){
-	?>
-		<a class="btn btn-success boton"> + </a>
-	<?php
-		}else{
-	?>	
-		<a class="btn btn-success botonCanjear"> Canjear </a>
-	<?php	
-		}
-	?>
+		<?php
+			if($admin == true){
+		?>
+			<a class="btn btn-success boton"> + </a>
+		<?php
+			}else{
+		?>	
+			<a class="btn btn-success botonCanjear"> Canjear </a>
+		<?php	
+			}
+		?>
 
 	
 			   

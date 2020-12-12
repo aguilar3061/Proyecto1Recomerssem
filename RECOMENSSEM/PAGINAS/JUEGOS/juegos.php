@@ -1,9 +1,6 @@
-
-
 <?php
-include_once("../../php_partials/menu.php");
+	
 ?>
-
 
 
 <html>
@@ -12,7 +9,7 @@ include_once("../../php_partials/menu.php");
 		<!-- <link rel="stylesheet" href="style/stilos.css"> -->
 		<!-- <script src="js/script.js"></script> -->
 		<link rel="stylesheet" href="../../style/bootstrap.min.css">
-		<link rel="stylesheet" href="../../style/juegos.css">
+		<link rel="stylesheet" href="../../style/juegos.css"> 
 
 		<!-- ICONOS -->
 		<link href="../../FONTAWESOME/fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet"> <!--load all styles -->
@@ -20,6 +17,13 @@ include_once("../../php_partials/menu.php");
 
 	</head>
 	<body>
+
+
+
+		<?php
+			include_once("../../php_partials/menu.php");
+		?>
+
 
 				  
 		<br>
