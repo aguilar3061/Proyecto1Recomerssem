@@ -5,13 +5,15 @@
     require_once("../../php_librarys/bd.php");
 	$listaOfertas = selectOferta();
 
+
+
 	$admin = false;
 	
 ?>
 
 
 
-<html>
+<html >
 	<head>
 	
 		<!-- <link rel="stylesheet" href="style/stilos.css"> -->
@@ -26,7 +28,7 @@
 
 
 	</head>
-	<body>
+	<body id="hhh">
 
 				  
       
@@ -37,8 +39,8 @@
 				foreach ($listaOfertas as $oferta){
 			?>
 
-				<div class="col mb-4 "  onclick="" style="cursor: pointer;">
-					<div class="card h-100 bg-light" >
+				<div class="col mb-4" >
+					<div id="<?php echo $oferta["idOferta"]?>" class="card h-100 bg-light"  onclick=clickOferta(<?php echo $oferta["idOferta"]?>) style="cursor: pointer;" >
 						<center>
 							<img src="/RECOMENSSEM/media/IMGoferta.png" width="80%" > 
 
@@ -92,8 +94,7 @@
 			}
 		?>
 
-	
-			   
+   
 
 		
 	</body>
@@ -101,4 +102,31 @@
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 
+
+
+	<script>
+
+		function clickOferta(idOferta) {
+
+			var intro = document.getElementById(idOferta);
+			if(intro.classList.contains('bg-secondary')){
+
+				intro.classList.remove('bg-secondary');
+				intro.classList.add('bg-light');
+
+			}else{
+				intro.classList.remove('bg-light');
+				intro.classList.add('bg-secondary');
+
+			}
+
+		}
+
+
+	</script>
+			
+
 </html>
+
+
+
