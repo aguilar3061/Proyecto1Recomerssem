@@ -8,7 +8,7 @@
             "name": "Launch Chrome",
             "request": "launch",
             "type": "pwa-chrome",
-            "url": "http://localhost:8080/RECOMENSSEM/Paginas/JUEGOS/juegos.php",
+            "url": "http://localhost:8080/RECOMENSSEM/Paginas/OFERTAS/ofertas.php",
             "webRoot": "${workspaceFolder}"
         },
 
