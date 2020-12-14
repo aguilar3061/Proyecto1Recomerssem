@@ -18,9 +18,13 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-user"></i>
         </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/RECOMENSSEM/PAGINAS/INICIAR_SESION/iniciarSesion.php" id="iniciarSesion">Iniciar sesion</a>
-          <a class="dropdown-item" href="/RECOMENSSEM/PAGINAS/REGISTRO/registro.php" id="Registrarse">Registrarse</a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"><?php if(isset($_SESSION['user'])){?>
+          <a class="dropdown-item" href="/RECOMENSSEM/PAGINAS/REGISTRO/registro.php" id="Registrarse">Cerrar sesion</a>
+          <?php
+          }else{?>
+              <a class="dropdown-item" href="/RECOMENSSEM/PAGINAS/INICIAR_SESION/iniciarSesion.php" id="iniciarSesion">Iniciar sesion</a>
+              <a class="dropdown-item" href="/RECOMENSSEM/PAGINAS/REGISTRO/registro.php" id="Registrarse">Registrarse</a><?php } ?>
+          
         </div>
       </li>
     </ul>
