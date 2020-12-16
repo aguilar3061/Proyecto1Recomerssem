@@ -57,12 +57,15 @@
 							if($admin == true){
 						?>
 							<div class="card-footer badge-secondary ">
-								<form action="\RECOMENSSEM\PAGINAS\OFERTAS\ofertas.php" method="POST" >
+
+							
+
+								<form action="../../php_controllers/OfertaController.php" method="POST" >
 									<input value="<?php echo $oferta["idOferta"]?>" type="hidden" name="idOferta">
 									<button class="btn btn-outline-danger" type="submit" name="Eliminar"> <i class="far fa-trash-alt"></i> </button>  
 								</form>
 
-								<form action="\RECOMENSSEM\PAGINAS\OFERTAS\ofertas.php" method="POST" >
+								<form action="../../php_controllers/OfertaController.php" method="POST" >
 									<input value="<?php echo $oferta["idOferta"]?>" type="hidden" name="idOferta" >
 									<button class="btn btn-outline-primary" type="submit" name="Update"> <i class="far fa-edit"></i> </button>
 								</form>  

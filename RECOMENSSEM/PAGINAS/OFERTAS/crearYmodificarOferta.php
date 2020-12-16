@@ -42,7 +42,7 @@
                     <form action="../../php_controllers/OfertaController.php" method="POST" enctype="multipart/form-data">
 
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Nombre: </label>
+                            <label class="col-sm-2 col-form-label">Nombre</label>
                             <div class="col-sm-10">
                                 <input type="text" name="nombre" id="nombre" class="form-control" placeholder="nombre" required>
                             </div>
@@ -52,7 +52,7 @@
 
                         
                         <div class="form-group row">
-                            <label for="cbxTienda"class="col-sm-2 col-form-label"> Region: </label>
+                            <label for="cbxTienda"class="col-sm-2 col-form-label">Region</label>
                             <div class="col-sm-10">
                                 <select class="custom-select" name="cbxTienda" id="cbxTienda" >
                                 <?php
@@ -73,7 +73,7 @@
 
 
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Puntos oferta: </label>
+                            <label class="col-sm-2 col-form-label">Puntos oferta </label>
                             <div class="col-sm-10">
                                 <input type="number" name="puntos" id="puntos" class="form-control" placeholder="puntos" min="1" max="300" required>
                             </div>
@@ -85,6 +85,13 @@
                         <div class="float-right">
                             <button type="submit" name="insert" class="btn btn-primary">Crar Oferta</button>
                         </div>
+                        
+                        <div class="float-right">
+                            <button  href="\RECOMENSSEM\PAGINAS\OFERTAS\ofertas.php" type="submit" name="insert" class="btn btn-secondary">Cerrar</button>
+                        </div>
+
+
+
                     </form>  
                 </div>
             </div>

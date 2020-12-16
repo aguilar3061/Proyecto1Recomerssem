@@ -124,6 +124,20 @@
 
 
 
+    function deleteOferta( $idOferta ){
+
+        $conexion = openBD();
+
+        $sentenciaText = "
+        DELETE FROM oferta WHERE idOferta=:idOferta;
+        ";
+        $sentencia =$conexion->prepare($sentenciaText);
+        $sentencia->bindParam(":idOferta",    $idOferta);
+        $sentencia->execute();
+
+        $conexion = closeBD();
+
+    }
 
 
 ?>

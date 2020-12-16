@@ -11,13 +11,16 @@
         header('Location: \RECOMENSSEM\PAGINAS\OFERTAS\ofertas.php');
         exit();
        
-    }else if($_POST['update']){
-
-
-
     }
+    
+    if(isset($_POST['Eliminar'])){
 
 
-
-
+        deleteOferta( $_POST['idOferta'] );
+        
+        header('Location: \RECOMENSSEM\PAGINAS\OFERTAS\ofertas.php');
+        exit();
+    }
+    
+    
 ?>
