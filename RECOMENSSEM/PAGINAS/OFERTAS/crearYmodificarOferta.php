@@ -109,7 +109,7 @@
                         </div>
                         
                         <div class="float-right">
-                            <button  href="\RECOMENSSEM\PAGINAS\OFERTAS\ofertas.php" type="submit" name="insert" class="btn btn-secondary">Cerrar</button>
+                            <button  href="\RECOMENSSEM\PAGINAS\OFERTAS\ofertas.php" type="submit" name="nada" class="btn btn-secondary">Cerrar</button>
                         </div>
 
 
