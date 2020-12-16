@@ -4,23 +4,24 @@
 
     if (isset($_POST['insert'])){
 
+            insertarOferta( $_POST['nombre'],$_POST['cbxTienda'],$_POST['puntos']);
 
-
-        insertarOferta( $_POST['nombre'],$_POST['cbxTienda'],$_POST['puntos']);
-
-        header('Location: \RECOMENSSEM\PAGINAS\OFERTAS\ofertas.php');
-        exit();
+            header('Location: \RECOMENSSEM\PAGINAS\OFERTAS\ofertas.php');
+            exit();
        
-    }
-    
-    if(isset($_POST['Eliminar'])){
+    }   elseif(isset($_POST['Eliminar'])){
 
+            deleteOferta( $_POST['idOferta'] );
+            
+            header('Location: \RECOMENSSEM\PAGINAS\OFERTAS\ofertas.php');
+            exit();
 
-        deleteOferta( $_POST['idOferta'] );
-        
-        header('Location: \RECOMENSSEM\PAGINAS\OFERTAS\ofertas.php');
-        exit();
+    }   elseif(isset($_POST['update'])){
+
+            updateOferta($_POST['idOferta'],  $_POST['nombre'],  $_POST['cbxTienda'],  $_POST['puntos']);
+
+            header('Location: \RECOMENSSEM\PAGINAS\OFERTAS\ofertas.php');
+            exit();
     }
-    
     
 ?>

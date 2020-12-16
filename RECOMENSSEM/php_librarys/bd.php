@@ -3,7 +3,7 @@
     function openBD(){
         $servername = "localhost";
         $username = "root";
-        $password = "mysql";
+        $password = "";
         
 
         $conexion = new PDO("mysql:host=$servername;dbname=db_recomencem", $username, $password);
@@ -103,6 +103,19 @@
         return $resultado;
     }
 
+    function selectUnaOferta($id){
+        $conexion = openBD();
+
+        $sentenciaText = "select * from oferta where idOferta=$id";
+
+        $sentencia =$conexion->prepare($sentenciaText);
+        $sentencia->execute();
+        $resultado = $sentencia->fetchAll();
+
+        $conexion = closeBD();
+
+        return $resultado;
+    }
 
 
     function insertarOferta( $nombre, $Tienda_idTienda, $precioOferta){
@@ -140,4 +153,19 @@
     }
 
 
+    function updateOferta($idOferta, $nombre, $Tienda_idTienda, $precioOferta){
+        
+        $conexion = openBD();
+    
+        $sentenciaText = "update oferta  SET nombre = :nombre, Tienda_idTienda = :Tienda_idTienda, precioOferta = :precioOferta where idOferta = $idOferta";
+        $sentencia = $conexion->prepare($sentenciaText);
+        $sentencia->bindParam(':nombre',$nombre);
+        $sentencia->bindParam(':Tienda_idTienda',$Tienda_idTienda);
+        $sentencia->bindParam(':precioOferta', $precioOferta);
+
+        $sentencia->execute();
+    
+        $conexion = closeBD();
+    
+    }
 ?>

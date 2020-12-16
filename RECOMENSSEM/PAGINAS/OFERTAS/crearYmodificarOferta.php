@@ -24,9 +24,34 @@
     </head>
     <body>
 
+    
+
 
         <?php
             include_once("../../php_partials/menu.php");
+            $idTienda = 33;
+            if (isset($_POST['Update'])){
+
+                $form = 1;
+             
+                
+                $oferta = selectUnaOferta($_POST['idOferta']);
+             
+                
+             
+                $id = $oferta[0]['idOferta'];
+                $nombre = $oferta[0]['nombre'];
+                $idTienda = $oferta[0]['Tienda_idTienda'];
+                $puntos = $oferta[0]['precioOferta'];
+
+             
+              }
+              else{
+                $form = 0;
+              }
+             
+             
+             ?>
         ?>
 
 
@@ -37,28 +62,25 @@
                 <div class="card-header text-white bg-primary">
                     Crear Oferta
                 </div>
-
                 <div class="card-body">
                     <form action="../../php_controllers/OfertaController.php" method="POST" enctype="multipart/form-data">
 
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Nombre</label>
                             <div class="col-sm-10">
-                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="nombre" required>
+                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="nombre" required value="<?php  if($form == true){ echo $nombre; }?>"> 
                             </div>
                         </div>
 
-
-
                         
                         <div class="form-group row">
-                            <label for="cbxTienda"class="col-sm-2 col-form-label">Region</label>
+                            <label for="cbxTienda"class="col-sm-2 col-form-label">Tiendas</label>
                             <div class="col-sm-10">
                                 <select class="custom-select" name="cbxTienda" id="cbxTienda" >
                                 <?php
                                     foreach ($listaTIENDAS as $tienda) {    
                                 ?>
-                                    <option value="<?php echo $tienda['idTienda']?>" ?> 
+                                    <option value="<?php echo $tienda['idTienda']?>"<?php if ($tienda['idTienda'] == $idTienda){ echo "selected"; } ?>> 
                                         <?php echo $tienda['nombre']?> 
                                     </option>
                                 <?php
@@ -75,15 +97,15 @@
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Puntos oferta </label>
                             <div class="col-sm-10">
-                                <input type="number" name="puntos" id="puntos" class="form-control" placeholder="puntos" min="1" max="300" required>
+                                <input type="number" name="puntos" id="puntos" class="form-control" placeholder="puntos" min="1" max="300" required value="<?php  if($form == true){ echo $puntos; }?>">
                             </div>
                         </div>
                         
 
 
-
+                        <input type="hidden" id="idOferta" name="idOferta" value="<?php echo $id?>">
                         <div class="float-right">
-                            <button type="submit" name="insert" class="btn btn-primary">Crar Oferta</button>
+                            <button type="submit" name="<?php if($form == true){ echo "update"; } else{echo "insert";} ?>" class="btn btn-primary"><?php  if($form == true){ echo "Editar oferta"; } else{echo "Crear oferta";}?></button>
                         </div>
                         
                         <div class="float-right">

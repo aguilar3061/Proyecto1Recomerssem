@@ -5,6 +5,9 @@
 
         if($_POST['Contraseña']==$_POST['Contraseña2']){
         InsertarUsuarios($_POST['Nombre'],$_POST['Apellidos'],$_POST['Correo'],$_POST['Contraseña']);
+
+        header('Location: \RECOMENSSEM\index.php');
+        exit();
     }
     else{
         ?>

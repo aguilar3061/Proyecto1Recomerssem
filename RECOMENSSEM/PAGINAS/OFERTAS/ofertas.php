@@ -59,13 +59,13 @@
 							<div class="card-footer badge-secondary ">
 
 							
-
+								<label for="puntos"><?php echo "Coste: ". $oferta['precioOferta'] ?></label>
 								<form action="../../php_controllers/OfertaController.php" method="POST" >
 									<input value="<?php echo $oferta["idOferta"]?>" type="hidden" name="idOferta">
 									<button class="btn btn-outline-danger" type="submit" name="Eliminar"> <i class="far fa-trash-alt"></i> </button>  
 								</form>
 
-								<form action="../../php_controllers/OfertaController.php" method="POST" >
+								<form action="crearYmodificarOferta.php" method="POST" >
 									<input value="<?php echo $oferta["idOferta"]?>" type="hidden" name="idOferta" >
 									<button class="btn btn-outline-primary" type="submit" name="Update"> <i class="far fa-edit"></i> </button>
 								</form>  
