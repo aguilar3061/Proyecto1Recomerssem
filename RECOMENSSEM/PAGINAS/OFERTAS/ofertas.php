@@ -6,9 +6,9 @@
 	$listaOfertas = selectOferta();
 
 
-	
+	//http://localhost:8080/RECOMENSSEM/Paginas/OFERTAS/ofertas.php
 	$puntosObtenidos = 200;
-	$admin = false;
+	$admin = true;
 	
 ?>
 
@@ -45,9 +45,9 @@
 							<img src="/RECOMENSSEM/media/IMGoferta.png" width="80%" > 
 
 							<div class="card-body">
-								<strong><?php $tienda = selectTiendaConID($oferta["Tienda_idTienda"]); echo $tienda["nombre"] ?></strong>   
-								<br>    
 								<strong><?php echo $oferta["nombre"]?></strong>  
+								<br>    
+								<strong><?php $tienda = selectTiendaConID($oferta["Tienda_idTienda"]); echo $tienda["nombre"] ?></strong>   
 								<br> 
 							</div>
 							
@@ -83,7 +83,7 @@
 		<?php
 			if($admin == true){
 		?>
-			<a class="btn btn-success boton"> + </a>
+				<a href="crearYmodificarOferta.php" class="btn btn-success boton"> + </a>
 		<?php
 			}else{
 		?>	
@@ -148,7 +148,7 @@
 					puntosActualizados = sumaPrecioOfertas - puntosObtenidos;
 
 
-
+					alert("Oferta con numero 945727895285724 adquirida :) ");
 				}else{
 
 					alert("NO TE LLEGAN LOS PUNTOS");
