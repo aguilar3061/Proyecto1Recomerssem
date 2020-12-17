@@ -4,3 +4,13 @@ albert 	--> menu
 arnau 	--> principal
 dani 	--> registro, noticias
 carlos 	--> ofertas, juegos
+
+
+
+info BD ofertas tiendas...
+
+edit delete user
+
+insert update juego
+
+insert update ofertas 
