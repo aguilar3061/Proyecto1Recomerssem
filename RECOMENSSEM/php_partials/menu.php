@@ -25,8 +25,12 @@ session_start();
           <i class="fa fa-user"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <?php if(isset($_SESSION['user'])){?>
+        <?php if(isset($_SESSION['user'])){?>
+          <?php if(isset($_SESSION['admin'])) { ?>
+            <a class="dropdown-item" href="/RECOMENSSEM/PAGINAS/GESTION_USUARIOS/gestionUsuarios.php" id="gestionUsuarios" >Gestionar usuarios</a>
+          <?php }?>
             <a class="dropdown-item" href="/RECOMENSSEM/PAGINAS/LOGOUT/logout.php" id="cerrarSesion" >Cerrar sesion</a>
+
           <?php
           }else{?>
               <a class="dropdown-item" href="/RECOMENSSEM/PAGINAS/INICIAR_SESION/iniciarSesion.php" id="iniciarSesion">Iniciar sesion</a>

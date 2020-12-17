@@ -19,7 +19,63 @@
         return null;
     }
 
+    function selectUsuarios(){
+        $conexion = openBD();
 
+        $sentenciaText = "
+        select * from usuario
+        ";
+        $sentencia =$conexion->prepare($sentenciaText);
+        $sentencia->execute();
+        $resultado = $sentencia->fetchAll();
+
+        $conexion = closeBD();
+
+        return $resultado;
+    }
+    function deleteUser($idUsuario){
+        $conexion = openBD();
+
+        $sentenciaText = "
+        DELETE FROM usuario WHERE idUsuario=:idUsuario;
+        ";
+        $sentencia =$conexion->prepare($sentenciaText);
+        $sentencia->bindParam(":idUsuario",$idUsuario);
+        $sentencia->execute();
+
+        $conexion = closeBD();
+    }
+    function selectUnUsuario($idUsuario){
+        $conexion = openBD();
+
+        $sentenciaText = "select * from usuario where idUsuario=$idUsuario";
+
+        $sentencia =$conexion->prepare($sentenciaText);
+        $sentencia->execute();
+        $resultado = $sentencia->fetchAll();
+
+        $conexion = closeBD();
+
+        return $resultado;
+    }
+    function updateUsuario($idUsuario, $nombre, $cognoms, $mail, $contrasenya, $admin, $puntosObtenidos){
+
+        $conexion = openBD();
+    
+        $sentenciaText = "update usuario  SET nombre = :nombre, cognoms = :cognoms, mail = :mail, contrasenya = :contrasenya, admin = :admin, puntosObtenidos = :puntosObtenidos where idUsuario = $idUsuario";
+        $sentencia = $conexion->prepare($sentenciaText);
+        $sentencia->bindParam(':nombre',$nombre);
+        $sentencia->bindParam(':cognoms',$cognoms);
+        $sentencia->bindParam(':mail',$mail);
+        $sentencia->bindParam(':contrasenya',$contrasenya);
+        $sentencia->bindParam(':admin',$admin);
+        $sentencia->bindParam(':puntosObtenidos',$puntosObtenidos);
+        
+
+        $sentencia->execute();
+    
+        $conexion = closeBD();
+    }
     function selectOferta(){
         $conexion = openBD();
 
