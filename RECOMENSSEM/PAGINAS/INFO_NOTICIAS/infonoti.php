@@ -43,6 +43,11 @@ include_once("../../php_partials/menu.php");
 			<?php
 				}
 			?>
-</div>   
+</div>
+<footer class="bg-primary">
+    <?php
+		include_once("php_partials/footer.php");
+	?>
+</footer>   
 </body>
 </html>
