@@ -44,7 +44,7 @@
 						
 					</div>
 				</div>			
-				<div class="col mb-2 " onclick="" style="cursor: pointer;">
+				<div class="col mb-2 " onclick="window.location.href='ALBERT/juego-proyecto/index.php'" style="cursor: pointer;">
 					<div class="card  bg-success"  >
 							
 							<img src="/RECOMENSSEM/media/IMGjuego.svg" alt="Enviar formulario" width="20%" height="40%" style=" display:block; margin:auto;">
@@ -57,13 +57,13 @@
 						
 					</div>
 				</div>	
-				<div class="col mb-2 " onclick="window.location.href='DANI/Inicio.html'" style="cursor: pointer;">
+				<div class="col mb-2 " onclick="" style="cursor: pointer;">
 					<div class="card  bg-success"  >
 							
-							<img src="/RECOMENSSEM/media/MiniaturaJuego3.JPG" alt="Enviar formulario" width="33%" height="40%" style=" display:block; margin:auto;">
+							<img src="/RECOMENSSEM/media/IMGjuego.svg" alt="Enviar formulario" width="20%" height="40%" style=" display:block; margin:auto;">
 					
 							<div class="card-body">
-								<strong> Laberinto</strong>   
+								<strong> Juego 3</strong>   
 								<br>    
 							</div>
 						
