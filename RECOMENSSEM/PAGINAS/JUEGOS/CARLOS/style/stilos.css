@@ -1,0 +1,305 @@
+#juego {
+	
+	width: 1280px;
+	height: 720px;
+	background-size: 1280px 720px;
+	background-image: url("../media/cocina/cocinaDEFINI12.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed; 
+	visibility: hidden;
+	/* display: none; */
+	/* display: block; */
+}
+
+#imgCheck{
+	position: absolute; 
+	top: 360px; 
+	left: 560px;  
+	z-index: 10;
+	display: none;
+}
+
+#imgCros{
+	position: absolute; 
+	top: 360px; 
+	left: 560px;  
+	z-index: 10;
+	display: none;
+}
+
+#inicio{
+	text-align: center;
+	width: 1280px;
+	height: 720px;
+	visibility: visibility;
+
+}
+
+#play{
+	font-weight: bold;
+	font-size: 20px;
+	border:1px solid #000; 
+	border-radius:5px; 
+	background-color: #5EEBED;
+	width:100%;
+	height:100%;
+}
+
+iframe{
+
+	display:none;
+	
+}
+
+
+#resumen{
+
+	background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("../media/cocina/cocinaDEFINI12.png");
+	width: 1280px;
+	height: 720px;
+	
+	background-size: 1280px 720px;
+	
+	background-repeat: no-repeat;
+	background-attachment: fixed; 
+	visibility: hidden;
+
+	
+}
+
+#res{
+	width: auto;
+	height: auto;
+	padding: 20%; 
+	text-align: center;
+ } 
+
+#res1{
+	border-radius: 5px;
+	margin: 0 ;
+	background-color: #64E880;
+	padding:1%;
+}
+
+
+
+
+
+
+
+#cuentaAtras {
+	
+	font-size: 20px;
+	margin-right: 10px;
+	float: right; 
+	width: 110px;
+	text-align: center;
+	font-family: monaco;
+  
+}
+  
+#cajaimagenes {
+	width: 1220px;
+	padding: 10px;
+	border: 5px outset #4496EE;
+	background-color: #51CCF0;
+	position: absolute;
+	bottom: 0;
+	margin: 10px; 
+
+
+}
+
+
+
+
+
+
+#cajaSoltarFruta {
+  float: left;
+  width: 85px;
+  height: 50px;
+  margin-left: -15px;
+  margin-top: 340px;
+  border: 1px solid black;
+  padding-top: 10px;
+  text-align: center; 
+  border-style: none;
+  }
+
+
+#cajonEstanteria{
+	
+	float: left;
+	width: 137px;
+	height: 50px;
+	margin-left: 27px;
+	margin-top: 80px;
+	border: 1px solid black;
+	padding-top: 10px;
+	text-align: center;
+	border-style: none;
+}
+
+
+
+#neveraYcongelador {
+  float: right;
+  width: 345px;
+  height: 390px;
+  margin-right: -100px;
+  margin-top: 220px;
+  border: 1px solid black;
+  text-align: center; 
+  border-style: none;
+  
+}
+
+#nevera {
+  float: left;
+  margin-top: ;
+  width: 47%;
+  height: 390px;
+  border: 1px solid black;
+  text-align: center;
+  border-style: none;
+}
+
+
+#puertanevera {
+  float: right;
+  margin-top: 5px;
+  width: 45%;
+  height: 200px;
+  border: 1px solid black;
+  text-align: center;
+  border-style: none;
+  
+}
+
+
+
+
+
+
+#cajaSoltarNevera1 {
+  padding-top: 20px;
+  width: auto;
+  height: 50px;
+  border: 1px solid black;
+  text-align: center; 
+  border-style: none;
+  }
+
+#cajaSoltarNevera2 {
+  margin-top: 5px;
+  width: auto;
+  height: 50px;
+  border: 1px solid black;
+  text-align: center;
+  padding-top: 10px; 
+  border-style: none;
+  }
+
+#cajaSoltarNevera3 {
+
+  width: auto;
+  height: 73px;
+  border: 1px solid black;
+  text-align: center;
+border-style: none;
+padding-top: 15px;
+
+}
+
+
+#cajaSoltarCongelador1 {
+ 
+  width: auto;
+  height: 55px;
+  border: 1px solid black;
+  text-align: center;
+  padding-top: 20px; 
+  border-style: none;}
+
+
+#cajaSoltarCongelador2 {
+  padding-top: 30px;
+  width: auto;
+  height: 80px;
+  border: 1px solid black;
+  text-align: center;
+  border-style: none;
+ 
+ }
+
+
+
+
+#puertanevera1{
+	position: relative;
+	top: 0;
+	left: 0;
+	
+	
+	margin-top: 5px;
+	width: auto;
+	height: 45px;
+	border: 1px solid black;
+	padding: 2px;
+	text-align: center;
+	border-style: none;
+}
+
+
+
+
+#puertanevera2{
+	position: relative;
+	top: 0;
+	left: 0;
+	
+	
+	margin-top: 5px;
+	width: 110px;
+	height: 45px;
+	border: 1px solid black;
+	padding: 2px;
+	text-align: center;
+border-style: none;
+}
+
+#puertanevera3{
+	position: relative;
+	top: 0;
+	left: 0;
+	
+	margin-top: 33px;
+	width: auto;
+	height: 45px;
+	border: 1px solid black;
+	padding: 2px;
+	text-align: center;
+	border-style: none;
+}
+
+#cuentaAtras{
+	
+	color: #4496EE;
+	font-weight: bold;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
