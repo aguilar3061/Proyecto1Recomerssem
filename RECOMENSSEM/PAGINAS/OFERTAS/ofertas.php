@@ -7,15 +7,16 @@
 
 
 	//http://localhost:8080/RECOMENSSEM/Paginas/OFERTAS/ofertas.php
-	$puntosObtenidos = 200;
 
-	// if( isset($_SESSION['admin']) ){
-	// 	$admin = true;
-	// }else{
-	// 	$admin = false;
-	// }
 
-	$admin = false;
+	$puntosObtenidos = $_SESSION['points'];
+	
+	if( isset($_SESSION['admin']) ){
+		$admin = true;
+	}else{
+		$admin = false;
+	}
+
 	
 ?>
 
