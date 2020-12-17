@@ -168,4 +168,25 @@
         $conexion = closeBD();
     
     }
+
+    function consultarUsuario($mail,$password){
+
+        
+       
+        
+
+        $conexion = openBD();
+
+        $sentenciaText = "select * from usuario where mail=:mail AND contrasenya=:contrasenya";
+
+        $sentencia =$conexion->prepare($sentenciaText);
+        $sentencia->bindParam(":mail",$mail);
+        $sentencia->bindParam(":contrasenya",$password);
+        $sentencia->execute();
+        $resultado = $sentencia->fetchAll();
+
+        $conexion = closeBD();
+
+        return $resultado;
+    }
 ?>

@@ -28,21 +28,21 @@ include_once("../../php_partials/menu.php");
         </a>
       </div>
       <div class="card-body">
-        <form action="../../php_controllers/Registrocontroller.php" method="POST"  enctype="multipart/form-data">
+        <form action="../../php_controllers/iniciarSesionController.php" method="POST"  enctype="multipart/form-data">
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Correo</label>
-            <div class="col-sm-10">
+            <label class="col-sm-3 col-form-label">Correo</label>
+            <div class="col-sm-9">
               <input type="email" name="Correo" id="Correo" class="form-control" placeholder="Correo Electronico" required>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Contraseña</label>
-            <div class="col-sm-10">
+            <label class="col-sm-3 col-form-label">Contraseña</label>
+            <div class="col-sm-9">
               <input type="password" name="Contraseña" id="Contraseña" class="form-control" placeholder="Contraseña" required>
             </div>
           </div>
           <div class="float-right">
-            <button type="submit" name="insert" class="btn btn-primary">Iniciar sesión</button>
+            <button type="submit" name="get" class="btn btn-primary">Iniciar sesión</button>
           </div>
           </form>
           
