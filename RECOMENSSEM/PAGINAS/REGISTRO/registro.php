@@ -22,7 +22,7 @@ include_once("../../php_partials/menu.php");
     <title>Registro</title>
 </head>
 <body>
-<div class="container mt-5 col-sm-6" >
+<div class="container mt-5 col-sm-5" >
     <div class="card">
       <div class="card-header text-white bg-primary">
         Registro
@@ -31,30 +31,32 @@ include_once("../../php_partials/menu.php");
       <div class="card-body">
         <form action="../../php_controllers/Registrocontroller.php" method="POST"  enctype="multipart/form-data">
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Nombre</label>
-            <div class="col-sm-4">
+            <label class="col-sm-4 col-form-label">Nombre</label>
+            <div class="col-sm-8">
               <input type="text" name="Nombre" id="Nombre" class="form-control" placeholder="Nombre" required>
             </div>
-            <label class="col-sm-2 col-form-label">Apellidos</label>
-            <div class="col-sm-4">
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-4 col-form-label">Apellidos</label>
+            <div class="col-sm-8">
               <input type="text" name="Apellidos" id="Apellidos" class="form-control" placeholder="Apellidos" required>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Correo</label>
-            <div class="col-sm-10">
+            <label class="col-sm-4 col-form-label">Correo</label>
+            <div class="col-sm-8">
               <input type="email" name="Correo" id="Correo" class="form-control" placeholder="Correo Electronico" required>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Contraseña</label>
-            <div class="col-sm-10">
+            <label class="col-sm-4 col-form-label">Contraseña</label>
+            <div class="col-sm-8">
               <input type="password" name="Contraseña" id="Contraseña" class="form-control" placeholder="Contraseña" required>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Confirmar Contraseña</label>
-            <div class="col-sm-10 mt-2">
+            <label class="col-sm-4 col-form-label">Confirmar Contraseña</label>
+            <div class="col-sm-8 mt-2">
               <input type="password" name="Contraseña2" id="Contraseña2" class="form-control" placeholder="Confirmar Contraseña" required>
             </div>
           </div>
