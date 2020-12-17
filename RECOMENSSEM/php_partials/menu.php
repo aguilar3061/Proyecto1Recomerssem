@@ -1,4 +1,9 @@
-<?php session_start();?>
+<?php 
+
+session_start();
+
+
+?>
 <nav class="navbar navbar-expand-lg  navbar-dark bg-primary">
     <img src="/RECOMENSSEM/media/logo-ninot-small.png" alt="logo" width="100" height="45">
 
@@ -21,7 +26,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <?php if(isset($_SESSION['user'])){?>
-          <a class="dropdown-item" href="/RECOMENSSEM/PAGINAS/REGISTRO/registro.php" id="Registrarse">Cerrar sesion</a>
+            <a class="dropdown-item" href="/RECOMENSSEM/PAGINAS/LOGOUT/logout.php" id="cerrarSesion" >Cerrar sesion</a>
           <?php
           }else{?>
               <a class="dropdown-item" href="/RECOMENSSEM/PAGINAS/INICIAR_SESION/iniciarSesion.php" id="iniciarSesion">Iniciar sesion</a>
