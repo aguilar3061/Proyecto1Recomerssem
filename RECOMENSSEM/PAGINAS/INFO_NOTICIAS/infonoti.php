@@ -24,6 +24,7 @@ include_once("../../php_partials/menu.php");
     <title>INFORMACIÓN</title>
 </head>
 <body>
+<div style="height: 90vh;">
 <div class="mr-1 row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5" style="margin: 10px;">
             <?php
 				foreach ($ListaInfo as $Info){
@@ -44,9 +45,10 @@ include_once("../../php_partials/menu.php");
 				}
 			?>
 </div>
-<footer class="bg-primary">
+</div>
+<footer class="bg-primary" >
     <?php
-		include_once("php_partials/footer.php");
+		include_once("../../php_partials/footer.php");
 	?>
 </footer>   
 </body>

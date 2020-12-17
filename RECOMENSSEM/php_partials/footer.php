@@ -1,5 +1,5 @@
 
-    <div class="row text-center">
+    <div class="container text-center">
         <div class="col-md-12">
             <!-- Facebook -->
             <a class="text-white">
@@ -25,7 +25,7 @@
             </a> 
         </div>
     </div>
-    <div class="row text-center">
+    <div class="container text-center">
         <div class="col-md-12">
             <a class="text-white"> © 2020 Copyright</a>
         </div>
