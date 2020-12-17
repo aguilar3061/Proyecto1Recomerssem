@@ -1,5 +1,6 @@
 <?php
 include_once('php_partials/menu.php');
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +24,7 @@ include_once('php_partials/menu.php');
 
 <body style="overflow:hidden;">
     <!-- Contenedor principal -->
-    <div class="container mt-3 border border-secondary" style="height: 80vh;">
+    <div class="container mt-3 border border-secondary" style="height: 80vh; min-height: auto;">
         <div style="position: relative;
                     top:50%;
                     left: 50%;
