@@ -171,10 +171,6 @@
 
     function consultarUsuario($mail,$password){
 
-        
-       
-        
-
         $conexion = openBD();
 
         $sentenciaText = "select * from usuario where mail=:mail AND contrasenya=:contrasenya";

@@ -7,8 +7,16 @@
 
 
 	//http://localhost:8080/RECOMENSSEM/Paginas/OFERTAS/ofertas.php
-	$puntosObtenidos = 200;
-	$admin = true;
+
+
+	$puntosObtenidos = $_SESSION['points'];
+	
+	if( isset($_SESSION['admin']) ){
+		$admin = true;
+	}else{
+		$admin = false;
+	}
+
 	
 ?>
 
@@ -52,14 +60,14 @@
 							</div>
 							
 						</center> 
-						
-						<?php
-							if($admin == true){
-						?>
-							<div class="card-footer badge-secondary ">
 
+						<div class="card-footer badge-secondary ">
+							<label for="puntos"><?php echo "Coste: ". $oferta['precioOferta'] ?></label>
+							<?php
+								if($admin == true){
+							?>
+								
 							
-								<label for="puntos"><?php echo "Coste: ". $oferta['precioOferta'] ?></label>
 								<form action="../../php_controllers/OfertaController.php" method="POST" >
 									<input value="<?php echo $oferta["idOferta"]?>" type="hidden" name="idOferta">
 									<button class="btn btn-outline-danger" type="submit" name="Eliminar"> <i class="far fa-trash-alt"></i> </button>  
@@ -69,12 +77,21 @@
 									<input value="<?php echo $oferta["idOferta"]?>" type="hidden" name="idOferta" >
 									<button class="btn btn-outline-primary" type="submit" name="Update"> <i class="far fa-edit"></i> </button>
 								</form>  
-							</div>
-						<?php
-							}
-						?>
+								
+
+
+							<?php
+								}
+							?>
+
+						</div>
 					</div>
 				</div>
+
+
+
+
+
 			<?php
 				}
 			?>
@@ -90,7 +107,28 @@
 		<?php
 			}else{
 		?>	
-			<a class="btn btn-success botonCanjear"  onclick=clickCanjearOferta(<?php echo $puntosObtenidos?>)> Canjear </a>
+			<a type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-success botonCanjear" > Canjear </a>
+		
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Canjear oferta</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>Seguro que quieres adquirir esta oferta?</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button onclick=clickCanjearOferta() type="button" data-dismiss="modal" class="btn btn-primary">Adquirir</button>
+				</div>
+				</div>
+			</div>
+			</div>
 		<?php	
 			}
 		?>
@@ -105,11 +143,13 @@
 
 
 
+	
+
 	<script>
 
-		let ofertaSelecionadas = [];
-
+		let ofertaSelecionada = [];
 		function clickOferta(idOferta, precio) {
+
 
 			var intro = document.getElementById(idOferta);
 			if(intro.classList.contains('bg-secondary')){
@@ -117,50 +157,47 @@
 				//deselecionar
 				intro.classList.remove('bg-secondary');
 				intro.classList.add('bg-light');
-
-				var ofer = {id: idOferta, precio: precio };
-				ofertaSelecionadas.splice( ofertaSelecionadas.indexOf(ofer) ,1);
+				var ofer = {
+					id: idOferta, 
+					precio: precio 
+					};
+					ofertaSelecionada.splice( ofertaSelecionada.indexOf(ofer) ,1);
 
 			}else{
+				if(ofertaSelecionada.length != 0 ){
 
+					ofertaSelecionada.array.forEach(element => {
+						document.getElementById(element['id']).classList.remove('bg-secondary');
+						document.getElementById(element['id']).element.classList.add('bg-light');
+					});
+
+				}
+				
 				//selecionar
 				intro.classList.remove('bg-light');
 				intro.classList.add('bg-secondary');
-
 				var ofer = {id: idOferta, precio: precio };
-				ofertaSelecionadas.push(ofer);
+				ofertaSelecionada.push(ofer);
 
 			}
-
 		}
 
 
 
-		function clickCanjearOferta(puntosObtenidos){
+		function clickCanjearOferta(){
 
-			var puntosActualizados = puntosObtenidos;
 
-			if(ofertaSelecionadas.length != 0 ){
+			if(ofertaSelecionada.length != 0 ){
 
-				var sumaPrecioOfertas = 0;
-				ofertaSelecionadas.forEach(ofertaa => sumaPrecioOfertas = sumaPrecioOfertas + ofertaa["precio"] );
-
-				if( puntosObtenidos > sumaPrecioOfertas ){
-
+				if( <?php echo $puntosObtenidos ?> > ofertaSelecionada[0]['precio']){
 					// CANJEAR OFERTA OK
-					puntosActualizados = sumaPrecioOfertas - puntosObtenidos;
+					alert(" Oferta con numero 945727895285724 adquirida :) ");
 
-
-					alert("Oferta con numero 945727895285724 adquirida :) ");
 				}else{
-
 					alert("NO TE LLEGAN LOS PUNTOS");
 				}
-
 			}else{
-
 				alert("NO SE HA SELECIONADO NINGUNA OFERTA");
-
 			}
 
 
