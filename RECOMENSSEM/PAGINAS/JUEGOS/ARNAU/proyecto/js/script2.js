@@ -3,10 +3,12 @@ $(document).ready(function () {
 
     var necesarios = 20;
     var puntos = 0;
-    var tiempo = 60;
+    var tiempo = 40;
 
     var enemigo = document.getElementById("enemigo");
     var enemigo2 = document.getElementById("enemigo2");
+
+    document.getElementById("puntos").innerHTML = "Puntos: <b>" + puntos + "/" + necesarios + "</b>";
 
     /*La animacion de los puntos comienza una vez conseguimos la primera manzana*/
     document.getElementById('player').addEventListener("mouseover", function sumarPuntos() {
@@ -44,7 +46,7 @@ $(document).ready(function () {
             });
 
             puntos = 0;
-            tiempo = 60;
+            tiempo = 40;
         } else {
             $('#botones-ganar').css('visibility', 'hidden');
         }
@@ -73,7 +75,7 @@ $(document).ready(function () {
         });
 
         puntos = 0;
-        tiempo = 60;
+        tiempo = 40;
     });
 
     /*Evento por si tocamos al enemigo2 (perdemos)*/
@@ -98,7 +100,7 @@ $(document).ready(function () {
         });
 
         puntos = 0;
-        tiempo = 60;
+        tiempo = 40;
     });
 
     /*Funcion para restar segundo a segundo nuestro contador*/
@@ -125,7 +127,7 @@ $(document).ready(function () {
             });
 
             puntos = 0;
-            tiempo = 60;
+            tiempo = 40;
         }
     }
 
@@ -148,7 +150,7 @@ $(document).ready(function () {
             animateDiv();
         });
 
-        $('#enemigo2').animate({ top: newq[0], left: newq[0] }, function () {
+        $('#enemigo2').animate({ top: newq[0], right: newq[1] }, function () {
             animateDiv();
         });
 

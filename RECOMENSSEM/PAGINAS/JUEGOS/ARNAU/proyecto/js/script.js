@@ -1,11 +1,13 @@
 $(document).ready(function () {
     animateDiv();
 
-    var necesarios = 10;
+    var necesarios = 20;
     var puntos = 0;
     var tiempo = 60;
 
     var enemigo = document.getElementById("enemigo");
+
+    document.getElementById("puntos").innerHTML = "Puntos: <b>" + puntos + "/" + necesarios + "</b>";
 
     /*La animacion de los puntos comienza una vez conseguimos la primera manzana*/
     document.getElementById('player').addEventListener("mouseover", function sumarPuntos() {
@@ -21,7 +23,7 @@ $(document).ready(function () {
         document.getElementById("player").style.marginLeft = randNum2 + "px";
 
         /*Si llegamos a 30 puntos, con lo cual ganamos y nos lanza el siguiente popup*/
-        if (puntos == 10) {
+        if (puntos == 20) {
             /*Añadiremos una clase al popup para que salte*/
             document.getElementById("popup-1").classList.toggle("active");
 
@@ -110,6 +112,7 @@ $(document).ready(function () {
 
         var nh = Math.floor(Math.random() * h);
         var nw = Math.floor(Math.random() * w);
+       
 
         return [nh, nw];
 
