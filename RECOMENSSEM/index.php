@@ -32,7 +32,7 @@ session_start();
 
 <body style="overflow:hidden;">
     <!-- Contenedor principal -->
-    <div class="container mt-3 w-50" style="height: 75vh; min-height: auto; background-color: rgba(44, 62, 80, 0.8);">
+    <div class="container mt-3 w-50" style="height: 78vh; min-height: auto; background-color: rgba(44, 62, 80, 0.8);">
         <div style="position: relative;
                     top:50%;
                     left: 50%;
@@ -53,7 +53,7 @@ session_start();
 
             <div class="row w-100 align-items-center mt-4" style="display: none">
                 <div class="col text-center">
-                    <a href="PAGINAS/OFERTAS/ofertas.php" class="btn btn-danger regular-button w-50" style="height: 100px; font-size: 30px; line-height:85px;"> Ofertas </a>
+                    <a href="PAGINAS/OFERTAS/ofertas.php" class="btn btn-warning regular-button w-50" style="height: 100px; font-size: 30px; line-height:85px;"> Ofertas </a>
                 </div>
             </div>
 
@@ -77,10 +77,17 @@ session_start();
                             </button>
                         </div>
                         <div class="modal-body">
-                            ...
+                            - Información: En la sección Información encontrarás toda la actualidad del Mercat del Ninot, y de información de 
+                            quienes somos
+                            <br><br>
+                            - Juegos: En la sección Juegos podrás acceder a los cuatro juegos que tenemos disponibles en nuestra página web, 
+                            con los cuales podras conseguir puntos para canjear en nuestros productos
+                            <br><br>
+                            - Ofertas: En esta sección, exclusiva para usuarios registrados de nuestra página, podras ver todas las ofertas que 
+                            ofrecemos, y gracias a los puntos conseguidos en los juegos, podrás canjearlos en estas
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                         </div>
                     </div>
                 </div>
