@@ -1,6 +1,5 @@
 <?php
 include_once('php_partials/menu.php');
-session_start();
 ?>
 
 <!DOCTYPE html>

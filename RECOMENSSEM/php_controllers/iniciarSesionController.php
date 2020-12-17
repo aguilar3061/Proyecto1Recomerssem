@@ -20,9 +20,9 @@ session_start();
             <?php    
           } else{
                 $_SESSION['user'] = $usuario[0]['nombre'];
-
-                if($usuario[0]['admin'] === true){
-                    $_SESSION['admin'] = true;
+                $_SESSION['points'] = $usuario[0]['puntosObtenidos'];
+                if($usuario[0]['admin']){
+                    $_SESSION['admin'] = "es admin";
                 }
                 header('Location: \RECOMENSSEM\index.php');
                 exit();
