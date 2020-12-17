@@ -22,7 +22,7 @@ include_once("../../php_partials/menu.php");
     <title>Registro</title>
 </head>
 <body>
-<div class="container mt-5 col-sm-5" >
+<div class="container mt-5 col-sm-6" >
     <div class="card">
       <div class="card-header text-white bg-primary">
         Registro
