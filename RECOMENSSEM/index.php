@@ -40,7 +40,7 @@ include_once('php_partials/menu.php');
 
             <div class="row w-100 align-items-center">
                 <div class="col text-center">
-                    <a href="PAGINAS/INFO_NOTICIAS/infonoti.php" class="btn btn-warning regular-button w-50" style="height: 100px; font-size: 30px; line-height:85px;"> Información </a>
+                    <a href="PAGINAS/INFO_NOTICIAS/infonoti.php" class="btn btn-warning regular-button w-50" style="height: 100px; font-size: 30px; line-height:85px;"> Noticias </a>
                 </div>
             </div>
 
@@ -92,13 +92,13 @@ include_once('php_partials/menu.php');
                         </button>
                     </div>
                     <div class="modal-body">
-                        - Información: En la sección Información encontrarás toda la actualidad del Mercat del Ninot, y de información de
+                        - Noticias: En la sección Noticias encontrarás toda la actualidad del Mercat del Ninot, y de información de
                         quienes somos
                         <br><br>
-                        - Juegos: En la sección Juegos podrás acceder a los cuatro juegos que tenemos disponibles en nuestra página web,
+                        - Juegos: En la sección Juegos, exlusiva para usuarios de nuestra página, podrás acceder a los cuatro juegos que tenemos disponibles en nuestra página web,
                         con los cuales podras conseguir puntos para canjear en nuestros productos
                         <br><br>
-                        - Ofertas: En esta sección, exclusiva para usuarios registrados de nuestra página, podras ver todas las ofertas que
+                        - Ofertas: En la sección Ofertas, exclusiva para usuarios registrados en nuestra página, podras ver todas las ofertas que
                         ofrecemos, y gracias a los puntos conseguidos en los juegos, podrás canjearlos en estas
                     </div>
                     <div class="modal-footer">
