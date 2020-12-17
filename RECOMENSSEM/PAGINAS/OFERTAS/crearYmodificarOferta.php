@@ -28,27 +28,28 @@
 
 
         <?php
-            include_once("../../php_partials/menu.php");
-            $idTienda = 33;
-            if (isset($_POST['Update'])){
+        include_once("../../php_partials/menu.php");
+        $idTienda = 33;
+        if (isset($_POST['Update'])){
 
-                $form = 1;
-             
-                
-                $oferta = selectUnaOferta($_POST['idOferta']);
-             
-                
-             
-                $id = $oferta[0]['idOferta'];
-                $nombre = $oferta[0]['nombre'];
-                $idTienda = $oferta[0]['Tienda_idTienda'];
-                $puntos = $oferta[0]['precioOferta'];
+            $form = 1;
+            
+            
+            $oferta = selectUnaOferta($_POST['idOferta']);
+            
+            
+            
+            $id = $oferta[0]['idOferta'];
+            $nombre = $oferta[0]['nombre'];
+            $idTienda = $oferta[0]['Tienda_idTienda'];
+            $puntos = $oferta[0]['precioOferta'];
 
-             
-              }
-              else{
+            
+            }
+            else{
                 $form = 0;
-              }
+                $id = 0;
+            }
              
              
              ?>
@@ -109,7 +110,7 @@
                         </div>
                         
                         <div class="float-right">
-                            <button  href="\RECOMENSSEM\PAGINAS\OFERTAS\ofertas.php" type="submit" name="nada" class="btn btn-secondary">Cerrar</button>
+                            <button onclick="quitar()" href="\RECOMENSSEM\PAGINAS\OFERTAS\ofertas.php" type="submit" name="nada" class="btn btn-secondary">Cerrar</button>
                         </div>
 
 
@@ -119,4 +120,16 @@
             </div>
         </div>  
     </body>
+
+
+    <script>
+        function quitar() {
+      
+            document.getElementById('puntos').removeAttribute("required");
+            document.getElementById('nombre').removeAttribute("required");
+
+        }
+    </script>
+
+
 </html>
