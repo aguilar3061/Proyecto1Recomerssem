@@ -21,6 +21,7 @@ session_start();
           } else{
                 $_SESSION['user'] = $usuario[0]['nombre'];
                 $_SESSION['points'] = $usuario[0]['puntosObtenidos'];
+                $_SESSION['userID'] = $usuario[0]['idUsuario'];
                 if($usuario[0]['admin']){
                     $_SESSION['admin'] = "es admin";
                 }

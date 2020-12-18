@@ -14,11 +14,52 @@
         return $conexion;
     }
 
-
     function closeBD(){
         return null;
     }
 
+
+    //FUNCIONES PARA COMPROVAR EL JUEGO
+    function consultaJuegoUsuario($Usuario_idUsuario, $Juego_idJuego){
+        $conexion = openBD();
+
+        $sentenciaText = "select * from usuario_has_juego where Usuario_idUsuario=$Usuario_idUsuario and Juego_idJuego=$Juego_idJuego";
+
+        $sentencia =$conexion->prepare($sentenciaText);
+        $sentencia->execute();
+        $resultado = $sentencia->fetchAll();
+
+        $conexion = closeBD();
+
+        return $resultado;
+    }
+
+    function insertJuegoUsuario($Usuario_idUsuario,$Juego_idJuego,$juego_pasado){
+        $conexion = openBD();
+
+        $sentenciaText = "insert into usuario_has_juego (Usuario_idUsuario,Juego_idJuego,juego_pasado) values (:Usuario_idUsuario,:Juego_idJuego,:juego_pasado)";
+        $sentencia =$conexion->prepare($sentenciaText);
+        $sentencia->bindParam(":Usuario_idUsuario", $Usuario_idUsuario);
+        $sentencia->bindParam(":Juego_idJuego", $Juego_idJuego);
+        $sentencia->bindParam(":juego_pasado", $juego_pasado);
+        $sentencia->execute();
+
+        $conexion = closeBD();
+
+    }
+
+    function updatePuntosUsuario($idUsuario, $puntosObtenidos){
+        $conexion = openBD();
+    
+        $sentenciaText = "update usuario  SET  puntosObtenidos = :puntosObtenidos where idUsuario = $idUsuario";
+        $sentencia = $conexion->prepare($sentenciaText);
+        $sentencia->bindParam(':puntosObtenidos',$puntosObtenidos);
+        
+
+        $sentencia->execute();
+    
+        $conexion = closeBD();
+    }
     function selectUsuarios(){
         $conexion = openBD();
 

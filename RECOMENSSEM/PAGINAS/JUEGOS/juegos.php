@@ -1,5 +1,6 @@
 <?php
 	
+	
 ?>
 
 
@@ -18,19 +19,33 @@
 	</head>
 	<body>
 
-
+		
 
 		<?php
 			include_once("../../php_partials/menu.php");
+			require_once("../../php_librarys/bd.php");
+
+			$haJugado = consultaJuegoUsuario(2,2);
+			if (isset($_POST['updateJuego'])){
+				$checkWin = $_POST['infoGanador'];
+				 
+				if($checkWin){
+					$haJugado = consultaJuegoUsuario($_SESSION['userID'],$_POST['idJuego']);
+					if ($haJugado['juego_pasado'] === null){
+		
+						insertJuegoUsuario($_SESSION['userID'],$_POST['idJuego'],true);
+						updatePuntosUsuario($_SESSION['userID'], 100);
+					}
+				}
+				else{
+					 
+				}
+		}
 		?>
 
-
-				  
 		<br>
 		<div class="mr-1 row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-2" style="margin: 10px; text-align: center;">
-			<?php
-				
-			?>
+			<p><?php print($haJugado)?></p>
 				<div class="col mb-2 " onclick="window.location.href='ARNAU/proyecto/index.html'" style="cursor: pointer;">
 					<div class="card  bg-success"  >
 							
@@ -57,13 +72,13 @@
 						
 					</div>
 				</div>	
-				<div class="col mb-2 " onclick="window.location.href='DANI/Inicio.html'" style="cursor: pointer;">
+				<div class="col mb-2 " onclick="" style="cursor: pointer;">
 					<div class="card  bg-success"  >
 							
-							<img src="/RECOMENSSEM/media/MiniaturaJuego3.jpg" alt="Enviar formulario" width="33%" height="40%" style=" display:block; margin:auto;">
+							<img src="/RECOMENSSEM/media/IMGjuego.svg" alt="Enviar formulario" width="20%" height="40%" style=" display:block; margin:auto;">
 					
 							<div class="card-body">
-								<strong> Laberinto</strong>   
+								<strong> Juego 3</strong>   
 								<br>    
 							</div>
 						
