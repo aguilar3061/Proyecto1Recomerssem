@@ -60,10 +60,10 @@
 				<div class="col mb-2 " onclick="" style="cursor: pointer;">
 					<div class="card  bg-success"  >
 							
-							<img src="/RECOMENSSEM/media/IMGjuego.svg" alt="Enviar formulario" width="20%" height="40%" style=" display:block; margin:auto;">
+							<img src="/RECOMENSSEM/media/MiniaturaJuego3.jpg" alt="Enviar formulario" width="20%" height="40%" style=" display:block; margin:auto;">
 					
 							<div class="card-body">
-								<strong> Juego 3</strong>   
+								<strong> Laberinto</strong>   
 								<br>    
 							</div>
 						
