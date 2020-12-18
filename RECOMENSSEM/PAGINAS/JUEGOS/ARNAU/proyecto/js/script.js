@@ -1,9 +1,9 @@
 $(document).ready(function () {
     animateDiv();
 
-    var necesarios = 20;
+    var necesarios = 15;
     var puntos = 0;
-    var tiempo = 60;
+    var tiempo = 30;
 
     var enemigo = document.getElementById("enemigo");
 
@@ -23,7 +23,7 @@ $(document).ready(function () {
         document.getElementById("player").style.marginLeft = randNum2 + "px";
 
         /*Si llegamos a 30 puntos, con lo cual ganamos y nos lanza el siguiente popup*/
-        if (puntos == 20) {
+        if (puntos == 15) {
             /*Añadiremos una clase al popup para que salte*/
             document.getElementById("popup-1").classList.toggle("active");
 
