@@ -3,7 +3,7 @@
     function openBD(){
         $servername = "localhost";
         $username = "root";
-        $password = "";
+        $password = "mysql";
         
 
         $conexion = new PDO("mysql:host=$servername;dbname=db_recomencem", $username, $password);
@@ -27,12 +27,49 @@
 
         $sentencia =$conexion->prepare($sentenciaText);
         $sentencia->execute();
-        $resultado = $sentencia->fetchAll();
-
+        $resultado = $sentencia->fetch();
         $conexion = closeBD();
 
+       
+
         return $resultado;
+
+
     }
+
+
+
+
+
+
+
+
+    function insertUsuarioOferta($Usuario_idUsuario,$Oferta_idOferta){
+
+        if(!empty($Oferta_idOferta) && !empty($Usuario_idUsuario)){
+
+            $conexion = openBD();
+
+            $sentenciaText = "insert into usuario_has_oferta (Usuario_idUsuario,Oferta_idOferta) values (:Usuario_idUsuario,:Oferta_idOferta)";
+
+            $sentencia =$conexion->prepare($sentenciaText);
+
+            $sentencia->bindParam(":Usuario_idUsuario", $Usuario_idUsuario);
+            $sentencia->bindParam(":Oferta_idOferta", $Oferta_idOferta);
+
+            $sentencia->execute();
+
+            $conexion = closeBD();
+            
+        }
+    }
+
+
+
+
+
+
+
 
     function insertJuegoUsuario($Usuario_idUsuario,$Juego_idJuego,$juego_pasado){
         $conexion = openBD();

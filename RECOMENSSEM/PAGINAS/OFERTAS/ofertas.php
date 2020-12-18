@@ -2,22 +2,34 @@
 
 <?php
 	include_once("../../php_partials/menu.php");
-    require_once("../../php_librarys/bd.php");
-	$listaOfertas = selectOferta();
-
-
+	require_once("../../php_librarys/bd.php");
+	
 	//http://localhost:8080/RECOMENSSEM/Paginas/OFERTAS/ofertas.php
 
-
+	$listaOfertas = selectOferta();
 	$puntosObtenidos = $_SESSION['points'];
-	
+
+	$ofertaSelecionID = 0;
+	$ofertaSelecionPrecio = 0;
+
 	if( isset($_SESSION['admin']) ){
 		$admin = true;
 	}else{
 		$admin = false;
+
+		if( isset($_POST['vengoDeAKI']) ){
+
+			if( $_POST['idOfertaSelecionada'].EXTR_IF_EXISTS ){
+				$ofertaSelecionID = $_POST['idOfertaSelecionada'];
+				$ofertaSelecionPrecio = $_POST['precioOferta'];
+			}
+		}
 	}
 
-	
+
+
+
+
 ?>
 
 
@@ -48,53 +60,71 @@
 			?>
 
 				<div class="col mb-4" >
-					<div id="<?php echo $oferta["idOferta"]?>" class="card h-100 bg-light"  onclick=clickOferta(<?php echo $oferta["idOferta"]?>,<?php echo $oferta["precioOferta"]?>)   style="cursor: pointer;" >
-						<center>
-							<img src="/RECOMENSSEM/media/IMGoferta.png" width="80%" > 
 
-							<div class="card-body">
-								<strong><?php echo $oferta["nombre"]?></strong>  
-								<br>    
-								<strong><?php $tienda = selectTiendaConID($oferta["Tienda_idTienda"]); echo $tienda["nombre"] ?></strong>   
-								<br> 
+
+					<form action="\RECOMENSSEM\PAGINAS\OFERTAS\Ofertas.php" method="POST" >
+
+
+
+
+						<div id="<?php echo $oferta["idOferta"]?>" class="card h-100 bg-light" style="cursor: pointer;" >
+							<center>
+								<img src="/RECOMENSSEM/media/IMGoferta.png" width="80%" > 
+
+								<div class="card-body">
+									<strong><?php echo $oferta["nombre"]?></strong>  
+									<br>    
+									<strong><?php $tienda = selectTiendaConID($oferta["Tienda_idTienda"]); echo $tienda["nombre"] ?></strong>   
+									<br> 
+								</div>
+								
+							</center> 
+
+							<div class="card-footer badge-secondary ">
+								<label for="puntos"><?php echo "Coste: ". $oferta['precioOferta'] ?></label>
+								<?php
+									if($admin == true){
+								?>
+									
+								
+									<form action="../../php_controllers/OfertaController.php" method="POST" >
+										<input value="<?php echo $oferta["idOferta"]?>" type="hidden" name="idOferta">
+										<button class="btn btn-outline-danger" type="submit" name="Eliminar"> <i class="far fa-trash-alt"></i> </button>  
+									</form>
+
+									<form action="crearYmodificarOferta.php" method="POST" >
+										<input value="<?php echo $oferta["idOferta"]?>" type="hidden" name="idOferta" >
+										<button class="btn btn-outline-primary" type="submit" name="Update"> <i class="far fa-edit"></i> </button>
+									</form>  
+									
+
+
+								<?php
+									}else{
+								?>
+
+									<button class="btn btn-outline-primary" type="submit" name="vengoDeAKI" style="float: right;" > Adquirir </i> </button>
+
+								<?php
+									}
+								?>
+
 							</div>
-							
-						</center> 
-
-						<div class="card-footer badge-secondary ">
-							<label for="puntos"><?php echo "Coste: ". $oferta['precioOferta'] ?></label>
-							<?php
-								if($admin == true){
-							?>
-								
-							
-								<form action="../../php_controllers/OfertaController.php" method="POST" >
-									<input value="<?php echo $oferta["idOferta"]?>" type="hidden" name="idOferta">
-									<button class="btn btn-outline-danger" type="submit" name="Eliminar"> <i class="far fa-trash-alt"></i> </button>  
-								</form>
-
-								<form action="crearYmodificarOferta.php" method="POST" >
-									<input value="<?php echo $oferta["idOferta"]?>" type="hidden" name="idOferta" >
-									<button class="btn btn-outline-primary" type="submit" name="Update"> <i class="far fa-edit"></i> </button>
-								</form>  
-								
-
-
-							<?php
-								}
-							?>
-
 						</div>
-					</div>
+
+						<input type="hidden" id="idOfertaSelecionada" name="idOfertaSelecionada" value=<?php echo $oferta["idOferta"]?> >
+						<input type="hidden" id="precioOferta" name="precioOferta" value=<?php echo $oferta["precioOferta"]?> >
+
+					</form>
 				</div>
-
-
-
-
 
 			<?php
 				}
 			?>
+
+
+
+
 
 		</div>
 
@@ -103,33 +133,8 @@
 		<?php
 			if($admin == true){
 		?>
-				<a href="crearYmodificarOferta.php" class="btn btn-success boton"> + </a>
+			<a href="crearYmodificarOferta.php" class="btn btn-success boton"> + </a>
 		<?php
-			}else{
-		?>	
-			<a type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-success botonCanjear" > Canjear </a>
-		
-			<!-- Modal -->
-			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Canjear oferta</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<p>Seguro que quieres adquirir esta oferta?</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button onclick=clickCanjearOferta() type="button" data-dismiss="modal" class="btn btn-primary">Adquirir</button>
-				</div>
-				</div>
-			</div>
-			</div>
-		<?php	
 			}
 		?>
 
@@ -143,72 +148,41 @@
 
 
 
-	
+
 
 	<script>
 
-		let ofertaSelecionada = [];
-		function clickOferta(idOferta, precio) {
+
+		if(<?php echo $ofertaSelecionID ?> !== 0){
+
+	
+			if(<?php echo $puntosObtenidos ?> > <?php echo $ofertaSelecionPrecio ?>){
+
+				// CANJEAR OFERTA OK
 
 
-			var intro = document.getElementById(idOferta);
-			if(intro.classList.contains('bg-secondary')){
+				<?php
+					updatePuntosUsuario($_SESSION['userID'], $puntosObtenidos - $ofertaSelecionPrecio);
+					
+					insertUsuarioOferta( $_SESSION['userID'], $ofertaSelecionID ); 
+				?>
 
-				//deselecionar
-				intro.classList.remove('bg-secondary');
-				intro.classList.add('bg-light');
-				var ofer = {
-					id: idOferta, 
-					precio: precio 
-					};
-					ofertaSelecionada.splice( ofertaSelecionada.indexOf(ofer) ,1);
-
-			}else{
-				if(ofertaSelecionada.length != 0 ){
-
-					ofertaSelecionada.array.forEach(element => {
-						document.getElementById(element['id']).classList.remove('bg-secondary');
-						document.getElementById(element['id']).element.classList.add('bg-light');
-					});
-
-				}
+				alert(" Oferta adquirida correctamente, se le enviara una copia al correo, id oferta: " + <?php echo $ofertaSelecionID ?> );
 				
-				//selecionar
-				intro.classList.remove('bg-light');
-				intro.classList.add('bg-secondary');
-				var ofer = {id: idOferta, precio: precio };
-				ofertaSelecionada.push(ofer);
-
-			}
-		}
-
-
-
-		function clickCanjearOferta(){
-
-
-			if(ofertaSelecionada.length != 0 ){
-
-				if( <?php echo $puntosObtenidos ?> > ofertaSelecionada[0]['precio']){
-					// CANJEAR OFERTA OK
-					alert(" Oferta con numero 945727895285724 adquirida :) ");
-
-				}else{
-					alert("NO TE LLEGAN LOS PUNTOS");
-				}
+				
 			}else{
-				alert("NO SE HA SELECIONADO NINGUNA OFERTA");
+				alert(" Lamentablemente no le llegan los puntos para aduirir esta oferta ): ");
 			}
 
 
 		}
+		
 
 
 
 
 	</script>
-			
-
+		
 </html>
 
 
