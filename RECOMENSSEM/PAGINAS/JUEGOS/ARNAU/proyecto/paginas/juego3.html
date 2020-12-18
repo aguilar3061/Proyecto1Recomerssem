@@ -29,22 +29,19 @@
                 <div id="titulo"></div>
                 <div id="contenido"></div>
                 <div id="botones">
-
-                    <form action="\RECOMENSSEM\PAGINAS\JUEGOS\juegos.php" method="POST">
-                        <button id="boton1Perder" onclick="togglePopup()" style="display: none;">Reiniciar</button>
-                        <button id="boton2Perder" onclick="window.location.href='../index.html'"
-                            style="display: none;">Volver</button>
-                        <button id="boton1Ganar" onclick="togglePopup()" style="display: none;">Reiniciar</button>
-                        <button id="boton2Ganar" onclick="window.location.href='../index.html'"
-                            style="display: none;">Volver</button>
+                    <button id="boton1Perder" onclick="togglePopup()" style="display: none;">Reiniciar</button>
+                    <button id="boton2Perder" onclick="window.location.href='../index.html'" style="display: none;">Volver</button>
+                    <button id="boton1Ganar" onclick="togglePopup()" style="display: none;">Reiniciar</button>
+                    <button id="boton2Ganar" onclick="window.location.href='../index.html'" style="display: none;">Volver</button>
+                    <form action="\RECOMENSSEM\PAGINAS\JUEGOS\juegos.php" method="POST" >
 
                         <button type="submit" id="boton3" name="vengoJUEGO" style="display: none;">Siguiente</button>
 
                         <input type="hidden" id="infoGanador" name="infoGanador" value="GANADOR">
-                        <input type="hidden" id="idJuego" name="idJuego" value=3>
-
+                        <input type="hidden" id="idJuego" name="idJuego" value=3 >
+        
                     </form>
-
+                    
                 </div>
             </div>
         </div>
@@ -52,7 +49,8 @@
     </div>
 
     <center>
-        <button onclick="window.location.href='../index.html'" id="boton3" style="margin-top: 60px; 
+        <button onclick="window.location.href='../index.html'" id="boton3" style=
+        "margin-top: 60px; 
         background-color: rgba(169,3,41,1); 
         color: white; 
         border-radius: 20px; 
