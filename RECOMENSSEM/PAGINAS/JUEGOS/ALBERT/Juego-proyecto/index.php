@@ -45,14 +45,13 @@
           <img src="" alt="imagenResultado" id="imagenResultado">
         </div>
       </div>
-      <form action="crearYmodificarOferta.php" method="POST" >
-									<input value="<?php echo $oferta["idOferta"]?>" type="hidden" name="idOferta" >
-                  <button class="btn btn-outline-primary" type="submit" name="Update"> <i class="far fa-edit"></i> </button>
+      <form action="\RECOMENSSEM\PAGINAS\JUEGOS\juegos.php" method="POST" >
         <div class="row">
           <div class="col">
-            <button type="submit" id="btnFinal" name="updateJuego">continuar</button>
-            <input type="hidden" id="infoGanador" name="infoGanador" value="<?php echo $_COOKIE['ganador']?>">
-            <input type="hidden" id="idJuego" name="idJuego" value=2>
+          <button class="btn btn-outline-primary" type="submit" name="vengoJUEGO"> SALIR </button>
+
+          <input type="hidden" id="infoGanador" name="infoGanador" value="GANADOR">
+          <input type="hidden" id="idJuego" name="idJuego" value=2 >
           </div>
         </div>
 			</form>
