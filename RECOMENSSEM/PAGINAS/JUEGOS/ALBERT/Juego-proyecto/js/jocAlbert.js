@@ -212,23 +212,8 @@ function juegoOver(){
         var imagenVictoria = document.getElementById('imagenResultado');
         imagenVictoria.src = "./media/winner.png"
 
-        $(document).ready(function () {
-            createCookie("ganador", true, "1");
-            
-          });
-          
-          function createCookie(name, value, days) {
-            var expires;
-            if (days) {
-              var date = new Date();
-              date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-              expires = "; expires=" + date.toGMTString();
-            }
-            else {
-              expires = "";
-            }
-            document.cookie = escape(name) + "=" + escape(value) + expires + "; path=/";
-          }
+        var inputNombre = document.getElementById("infoGanador");
+        inputNombre.value = "GANADOR";
     }
     else{
         var victorySound = document.getElementById('lose');
@@ -237,22 +222,8 @@ function juegoOver(){
         var imagenVictoria = document.getElementById('imagenResultado');
         imagenVictoria.src = "./media/loser.png"
 
-        $(document).ready(function () {
-            createCookie("ganador", false, "1");
-          });
-          
-          function createCookie(name, value, days) {
-            var expires;
-            if (days) {
-              var date = new Date();
-              date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-              expires = "; expires=" + date.toGMTString();
-            }
-            else {
-              expires = "";
-            }
-            document.cookie = escape(name) + "=" + escape(value) + expires + "; path=/";
-          }
+        var inputNombre = document.getElementById("infoGanador");
+        inputNombre.value = "PERDEDOR";
     }
     }
 
