@@ -1,5 +1,7 @@
 <?php
-	
+
+	include_once("../../php_partials/menu.php");
+	require_once("../../php_librarys/bd.php");
 	
 ?>
 
@@ -19,33 +21,59 @@
 	</head>
 	<body>
 
-		
+	<?php
 
-		<?php
-			include_once("../../php_partials/menu.php");
-			require_once("../../php_librarys/bd.php");
+		if (isset($_POST['vengoJUEGO'])){
 
-			$haJugado = consultaJuegoUsuario(2,2);
-			if (isset($_POST['updateJuego'])){
+			$haJugado = consultaJuegoUsuario($_SESSION['userID'], $_POST['idJuego']);
+
+			if(!$haJugado){
 				$checkWin = $_POST['infoGanador'];
-				 
-				if($checkWin){
-					$haJugado = consultaJuegoUsuario($_SESSION['userID'],$_POST['idJuego']);
-					if ($haJugado['juego_pasado'] === null){
-		
-						insertJuegoUsuario($_SESSION['userID'],$_POST['idJuego'],true);
-						updatePuntosUsuario($_SESSION['userID'], 100);
-					}
+				if($checkWin == "GANADOR"){
+
+					insertJuegoUsuario($_SESSION['userID'],$_POST['idJuego'],true);
+					updatePuntosUsuario( $_SESSION['userID'], 100 + $_SESSION['points'] );
+
+					?>
+						<div class="alert alert-info" role="alert">
+							Juego superado, enhorabuena!
+						</div>
+						
+					<?php
+
+				}else{
+					?>
+						<div class="alert alert-danger" role="alert">
+							Juego no superado, a seguirlo intentando!
+						</div>
+
+					<?php
 				}
-				else{
-					 
-				}
+
+			}else{
+
+				?>
+					<div class="alert alert-info" role="alert">
+						Juego ya superado anteriormente, enhorabuena!
+					</div>
+
+				<?php
+			
+			}
+
 		}
-		?>
+
+	?>
+
+
+
+
+
 
 		<br>
 		<div class="mr-1 row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-2" style="margin: 10px; text-align: center;">
-			<p><?php print($haJugado)?></p>
+
+
 				<div class="col mb-2 " onclick="window.location.href='ARNAU/proyecto/index.html'" style="cursor: pointer;">
 					<div class="card  bg-success"  >
 							
@@ -85,7 +113,7 @@
 						
 					</div>
 				</div>	
-				<div class="col mb-2 " onclick="" style="cursor: pointer;">
+				<div class="col mb-2 " onclick="window.location.href='CARLOS/index.php'" style="cursor: pointer;">
 					<div class="card  bg-success"  >
 							
 							<img src="/RECOMENSSEM/media/IMGjuego.svg" alt="Enviar formulario" width="20%" height="40%" style=" display:block; margin:auto;">
@@ -109,7 +137,7 @@
 
 
 		<div id="puntos">
-			<h3> 	Puntos 0 	<?php  ?> &nbsp </h3>
+			<h3> Puntos: <?php echo $_SESSION['points']?>  </h3>
 		</div>
 
 	

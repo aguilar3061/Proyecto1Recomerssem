@@ -33,7 +33,7 @@ function timpoYcrono(){
 			pausarMusica();
 		},119000,"JavaScript");
 		//cuando lleguen a los 2s
-		//119000
+		//119000 
 	}
 	
 	//parar el tiempo
@@ -290,16 +290,27 @@ function sonidoPerdido(){
 	var sonidoOK = document.getElementById("sonidoPerdido");
 	sonidoOK.play();
 	sonidoOK.volume = 0.70;
+
+	var inputNombre = document.getElementById("infoGanador");
+    inputNombre.value = "PERDEDOR";
+
 }	
 function sonidoGanador(){
 	var sonidoOK = document.getElementById("sonidoGanador");
 	sonidoOK.play();
 	sonidoOK.volume = 0.70;
+
+	var inputNombre = document.getElementById("infoGanador");
+    inputNombre.value = "GANADOR";
+
 }	
 function sonidoSegundo(){
 	var sonidoOK = document.getElementById("sonidoSegundo");
 	sonidoOK.play();
 	sonidoOK.volume = 0.70;
+
+	var inputNombre = document.getElementById("infoGanador");
+    inputNombre.value = "GANADOR";
 }	
 
 
