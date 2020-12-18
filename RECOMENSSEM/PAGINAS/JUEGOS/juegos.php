@@ -57,10 +57,10 @@
 						
 					</div>
 				</div>	
-				<div class="col mb-2 " onclick="" style="cursor: pointer;">
+				<div class="col mb-2 " onclick="window.location.href='DANI/Inicio.html'" style="cursor: pointer;">
 					<div class="card  bg-success"  >
 							
-							<img src="/RECOMENSSEM/media/MiniaturaJuego3.jpg" alt="Enviar formulario" width="20%" height="40%" style=" display:block; margin:auto;">
+							<img src="/RECOMENSSEM/media/MiniaturaJuego3.jpg" alt="Enviar formulario" width="33%" height="40%" style=" display:block; margin:auto;">
 					
 							<div class="card-body">
 								<strong> Laberinto</strong>   
