@@ -123,6 +123,32 @@
 
         $conexion = closeBD();
     }
+  
+
+
+
+    function selectPuntosUsuario($idUsuario){
+        $conexion = openBD();
+
+        $sentenciaText = "
+        SELECT puntosObtenidos FROM usuario where idUsuario=$idUsuario;
+        ";
+
+        $sentencia =$conexion->prepare($sentenciaText);
+        $sentencia->execute();
+        $resultado = $sentencia->fetch();
+
+        $conexion = closeBD();
+
+        return $resultado[0];
+    }
+
+
+
+
+
+
+
     function selectUnUsuario($idUsuario){
         $conexion = openBD();
 
@@ -168,6 +194,28 @@
 
         return $resultado;
     }
+
+
+    function selectIdOfertaYaAdquiridas($Usuario_idUsuario){
+        $conexion = openBD();
+
+        $sentenciaText = "
+        SELECT * FROM usuario_has_oferta where Usuario_idUsuario = $Usuario_idUsuario;
+        ";
+        $sentencia =$conexion->prepare($sentenciaText);
+        $sentencia->execute();
+        $resultado = $sentencia->fetchAll();
+
+        $conexion = closeBD();
+
+        return $resultado;
+    }
+
+
+
+
+
+
 
     function selectTiendaConID($idTienda){
    

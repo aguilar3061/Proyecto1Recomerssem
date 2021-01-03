@@ -7,7 +7,11 @@
 	//http://localhost:8080/RECOMENSSEM/Paginas/OFERTAS/ofertas.php
 
 	$listaOfertas = selectOferta();
+	$_SESSION['points'] = selectPuntosUsuario($_SESSION['userID']);
 	$puntosObtenidos = $_SESSION['points'];
+
+	$listaOfertasYaCopradas = selectIdOfertaYaAdquiridas($_SESSION['userID']);
+
 
 	$ofertaSelecionID = 0;
 	$ofertaSelecionPrecio = 0;
@@ -159,19 +163,32 @@
 			if(<?php echo $puntosObtenidos ?> > <?php echo $ofertaSelecionPrecio ?>){
 
 				// CANJEAR OFERTA OK
+				<?php
+					$SePuedeComprar=true;
+					foreach($listaOfertasYaCopradas as $ofertaaa){
+						if($ofertaaa['Oferta_idOferta'] == $ofertaSelecionID){
+							$SePuedeComprar=false;
+						}
+					}
+				?>
 
 
 				<?php
-					updatePuntosUsuario($_SESSION['userID'], $puntosObtenidos - $ofertaSelecionPrecio);
-					
-					insertUsuarioOferta( $_SESSION['userID'], $ofertaSelecionID ); 
+					if($SePuedeComprar){
+						updatePuntosUsuario($_SESSION['userID'], $puntosObtenidos - $ofertaSelecionPrecio);
+						insertUsuarioOferta( $_SESSION['userID'], $ofertaSelecionID ); 
 				?>
-
-				alert(" Oferta adquirida correctamente, se le enviara una copia al correo, id oferta: " + <?php echo $ofertaSelecionID ?> );
-				
+						alert(" Oferta adquirida correctamente, se le enviara una copia al correo, id oferta: " + <?php echo $ofertaSelecionID ?> );
+				<?php
+					}else{
+				?>
+						alert(" Esta oferta ya ha sido adquirida anteriormente" );
+				<?php
+					}
+				?>
 				
 			}else{
-				alert(" Lamentablemente no le llegan los puntos para aduirir esta oferta ): ");
+				alert(" Lamentablemente no le llegan los puntos para adquirir esta oferta ): ");
 			}
 
 

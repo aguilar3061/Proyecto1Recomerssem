@@ -3,6 +3,9 @@
 	include_once("../../php_partials/menu.php");
 	require_once("../../php_librarys/bd.php");
 	
+	$_SESSION['points'] = selectPuntosUsuario($_SESSION['userID']);
+	
+
 ?>
 
 
