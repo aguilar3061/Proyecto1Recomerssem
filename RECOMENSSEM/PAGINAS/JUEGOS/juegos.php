@@ -74,14 +74,14 @@
 
 
 		<br>
-		<div class="mr-1 row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-2" style="margin: 10px; text-align: center;">
 
-
-				<div class="col mb-2 " onclick="window.location.href='ARNAU/proyecto/index.html'" style="cursor: pointer;">
-					<div class="card  bg-success"  >
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6" onclick="window.location.href='ARNAU/proyecto/index.html'" style="cursor: pointer;">
+					<div class="card mb-3 bg-success"  >
 							
-							<img src="/RECOMENSSEM/media/IMGjuego.svg" alt="Enviar formulario" width="20%" height="40%" style=" display:block; margin:auto;">
-					
+									
+							<img src="/RECOMENSSEM/media/Captura.PNG" class="card-img-top" alt="Enviar formulario"> 
 							<div class="card-body">
 								<strong> Juego 1</strong>   
 								<br>    
@@ -90,11 +90,13 @@
 						
 					</div>
 				</div>			
-				<div class="col mb-2 " onclick="window.location.href='ALBERT/juego-proyecto/index.php'" style="cursor: pointer;">
-					<div class="card  bg-success"  >
+				<div class="col-sm-6 mb-3" onclick="window.location.href='ALBERT/juego-proyecto/index.php'" style="cursor: pointer;">
+					<div class="card bg-success"  >
 							
-							<img src="/RECOMENSSEM/media/IMGjuego.svg" alt="Enviar formulario" width="20%" height="40%" style=" display:block; margin:auto;">
-					
+							
+								
+					<img src="/RECOMENSSEM/media/Captura.PNG" class="card-img-top" alt="Enviar formulario"> 
+
 							<div class="card-body">
 								<strong> Juego 2</strong>   
 								<br>    
@@ -103,11 +105,13 @@
 						
 					</div>
 				</div>	
-				<div class="col mb-2 " onclick="window.location.href='Dani/Inicio.html'" style="cursor: pointer;">
-					<div class="card  bg-success"  >
+			
+	
+				<div class="col-sm-6 mb-3" onclick="window.location.href='Dani/Inicio.html'" style="cursor: pointer;">
+					<div class="card bg-success"  >
 							
-							<img src="/RECOMENSSEM/media/IMGjuego.svg" alt="Enviar formulario" width="20%" height="40%" style=" display:block; margin:auto;">
-					
+									
+							<img src="/RECOMENSSEM/media/Captura.PNG" class="card-img-top" alt="Enviar formulario"> 
 							<div class="card-body">
 								<strong> Juego 3</strong>   
 								<br>    
@@ -116,11 +120,11 @@
 						
 					</div>
 				</div>	
-				<div class="col mb-2 " onclick="window.location.href='CARLOS/index.php'" style="cursor: pointer;">
-					<div class="card  bg-success"  >
-							
-							<img src="/RECOMENSSEM/media/IMGjuego.svg" alt="Enviar formulario" width="20%" height="40%" style=" display:block; margin:auto;">
-					
+				<div class="col-sm-6 mb-3" onclick="window.location.href='CARLOS/index.php'" style="cursor: pointer;">
+					<div class="card bg-success"  >
+
+						
+							<img src="/RECOMENSSEM/media/Captura.PNG" class="card-img-top" alt="Enviar formulario"> 
 							<div class="card-body">
 								<strong> Juego 4</strong>   
 								<br>    
@@ -129,22 +133,18 @@
 						
 					</div>
 				</div>	
-			<?php
-				
-			?>
 
-		
+			</div>	
 
+			<div id="puntos">
+				<h3> Puntos: <?php echo $_SESSION['points']?>  </h3>
+			</div>
 
 		</div>
 
 
-		<div id="puntos">
-			<h3> Puntos: <?php echo $_SESSION['points']?>  </h3>
-		</div>
 
-	
-
+			
 		
 
 
