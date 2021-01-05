@@ -46,7 +46,7 @@ include_once("../../php_partials/menu.php");
 </div> 
 <footer class="bg-primary">
     <?php
-		include_once("php_partials/footer.php");
+		include_once("../../php_partials/footer.php");
 	?>
 </footer>  
 </body>

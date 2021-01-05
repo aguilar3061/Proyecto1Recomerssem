@@ -11,9 +11,6 @@ include_once("../../php_partials/menu.php");
         <link rel="stylesheet" href="../../style/bootstrap.min.css">
         <link rel="stylesheet" href="../../style/registro.css">
         <link rel="stylesheet" href="../../style/index.css">
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-	    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
         
 
 
@@ -24,44 +21,44 @@ include_once("../../php_partials/menu.php");
 <body>
 <div class="container mt-5 col-sm-5" >
     <div class="card">
-      <div class="card-header text-white bg-primary">
+      <div class="card-header text-white bg-primary lang" key="Registro">
         Registro
         </a>
       </div>
       <div class="card-body">
         <form action="../../php_controllers/Registrocontroller.php" method="POST"  enctype="multipart/form-data">
           <div class="form-group row">
-            <label class="col-sm-4 col-form-label">Nombre</label>
+            <label class="col-sm-4 col-form-label lang" key="Nombre">Nombre</label>
             <div class="col-sm-8">
               <input type="text" name="Nombre" id="Nombre" class="form-control" placeholder="Nombre" required>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-4 col-form-label">Apellidos</label>
+            <label class="col-sm-4 col-form-label lang" key="Apellidos">Apellidos</label>
             <div class="col-sm-8">
               <input type="text" name="Apellidos" id="Apellidos" class="form-control" placeholder="Apellidos" required>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-4 col-form-label">Correo</label>
+            <label class="col-sm-4 col-form-label lang" key="Correo">Correo</label>
             <div class="col-sm-8">
               <input type="email" name="Correo" id="Correo" class="form-control" placeholder="Correo Electronico" required>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-4 col-form-label">Contraseña</label>
+            <label class="col-sm-4 col-form-label lang" key="Contrasenya">Contraseña</label>
             <div class="col-sm-8">
               <input type="password" name="Contraseña" id="Contraseña" class="form-control" placeholder="Contraseña" required>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-4 col-form-label">Confirmar Contraseña</label>
+            <label class="col-sm-4 col-form-label lang" key="ConfirmContrasenya">Confirmar Contraseña</label>
             <div class="col-sm-8 mt-2">
               <input type="password" name="Contraseña2" id="Contraseña2" class="form-control" placeholder="Confirmar Contraseña" required>
             </div>
           </div>
           <div class="float-right">
-            <button type="submit" name="insert" class="btn btn-primary">Registrar</button>
+            <button type="submit" name="insert" class="btn btn-primary lang" key="Registrar">Registrar</button>
           </div>
           </form>
           
@@ -69,4 +66,9 @@ include_once("../../php_partials/menu.php");
 </div>
     
 </body>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/script.js" charset="utf-8"></script>
 </html>

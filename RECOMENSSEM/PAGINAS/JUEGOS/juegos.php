@@ -39,7 +39,7 @@
 
 					?>
 						<div class="alert alert-info" role="alert">
-							Juego superado, enhorabuena!
+							<p class="lang" key="alertSuperado"> Superado, enhorabuena! </p>
 						</div>
 						
 					<?php
@@ -47,7 +47,7 @@
 				}else{
 					?>
 						<div class="alert alert-danger" role="alert">
-							Juego no superado, a seguirlo intentando!
+						<p class="lang" key="alertNoSuperado"> Juego no superado, a seguirlo intentando! </p>
 						</div>
 
 					<?php
@@ -57,7 +57,7 @@
 
 				?>
 					<div class="alert alert-info" role="alert">
-						Juego ya superado anteriormente, enhorabuena!
+					<p class="lang" key="alertYaSuperado"> Juego ya superado anteriormente, enhorabuena! </p>
 					</div>
 
 				<?php
@@ -83,7 +83,7 @@
 									
 							<img src="/RECOMENSSEM/media/Captura.PNG" class="card-img-top" alt="Enviar formulario"> 
 							<div class="card-body">
-								<strong> Juego 1</strong>   
+								<strong class="lang" key="Juego1"> Juego 1</strong>   
 								<br>    
 							</div>
 						
@@ -98,7 +98,7 @@
 					<img src="/RECOMENSSEM/media/Captura.PNG" class="card-img-top" alt="Enviar formulario"> 
 
 							<div class="card-body">
-								<strong> Juego 2</strong>   
+								<strong class="lang" key="Juego2"> Juego 2</strong>   
 								<br>    
 							</div>
 						
@@ -113,7 +113,7 @@
 									
 							<img src="/RECOMENSSEM/media/Captura.PNG" class="card-img-top" alt="Enviar formulario"> 
 							<div class="card-body">
-								<strong> Juego 3</strong>   
+								<strong class="lang" key="Juego3"> Juego 3</strong>   
 								<br>    
 							</div>
 						
@@ -126,7 +126,7 @@
 						
 							<img src="/RECOMENSSEM/media/Captura.PNG" class="card-img-top" alt="Enviar formulario"> 
 							<div class="card-body">
-								<strong> Juego 4</strong>   
+								<strong class="lang" key="Juego4"> Juego 4</strong>   
 								<br>    
 							</div>
 						
@@ -137,7 +137,7 @@
 			</div>	
 
 			<div id="puntos">
-				<h3> Puntos: <?php echo $_SESSION['points']?>  </h3>
+				<h3> <p class="lang" key="Puntos">Puntos: </p> <?php echo $_SESSION['points']?>  </h3>
 			</div>
 
 		</div>
@@ -153,5 +153,6 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="\RECOMENSSEM\js\script.js" charset="utf-8"></script>
 </html>
