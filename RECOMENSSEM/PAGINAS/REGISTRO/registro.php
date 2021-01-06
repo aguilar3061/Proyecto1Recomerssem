@@ -65,10 +65,99 @@ include_once("../../php_partials/menu.php");
     </div>
 </div>
     
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalRegistroPasswdNoOK" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Registro no valido</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Las contrasenas no coinciden..
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalRegistroCORREONoOK" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Registro no valido</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Ya ha sido creada una cuenta con este correo
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    
+
+
 </body>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="js/script.js" charset="utf-8"></script>
+  <!-- ESTAS DOS LINEAS ME DAN CONFLICTTOO POR ESO NO MUESTRA EL MENSAJE  -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/script.js" charset="utf-8"></script> -->
+ <!-- ESTAS DOS LINEAS ME DAN CONFLICTTOO POR ESO NO MUESTRA EL MENSAJE   -->
+
+
+  <?php
+  
+    if(isset($_SESSION['history'])){
+
+      if( $_SESSION['history'] == "registroPasswdNoOK"){
+        ?>
+        <script>
+          $(window).on('load', function() {
+            $('#modalRegistroPasswdNoOK').modal('show');
+          });
+        </script>
+        <?php
+        $_SESSION['history']= "";
+
+      }elseif($_SESSION['history'] == "RegistroCORREONoOK"){
+
+        ?>
+        <script>
+          $(window).on('load', function() {
+            $('#modalRegistroCORREONoOK').modal('show');
+          });
+        </script>
+        <?php
+        $_SESSION['history']= "";
+      }
+
+
+      
+    }
+
+
+
+  ?>
+
+
+
+
 </html>

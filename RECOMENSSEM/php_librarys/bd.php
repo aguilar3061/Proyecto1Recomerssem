@@ -19,6 +19,7 @@
     }
 
 
+    
     //FUNCIONES PARA COMPROVAR EL JUEGO
     function consultaJuegoUsuario($Usuario_idUsuario, $Juego_idJuego){
         $conexion = openBD();
@@ -239,12 +240,16 @@
 
         $conexion = openBD();
 
+
+        $hash = Password::hash($contraseña);
+           
+
         $sentenciaText = "insert into usuario (nombre,cognoms,mail,contrasenya,admin,puntosObtenidos) values (:nombre,:cognoms,:mail,:contrasenya,0,0) ";
         $sentencia =$conexion->prepare($sentenciaText);
         $sentencia->bindParam(":nombre",    $nombre);
         $sentencia->bindParam(":cognoms",    $apellidos);
         $sentencia->bindParam(":mail",    $correo);
-        $sentencia->bindParam(":contrasenya",    $contraseña);
+        $sentencia->bindParam(":contrasenya",    $hash);
         $sentencia->execute();
 
         $conexion = closeBD();
@@ -369,10 +374,7 @@
         return $resultado;
     }
 
-
-
-    
-    class Password {
+    class Password{
         const SALT = 'EstoEsUnSalt';
         public static function hash($password) {
             return hash('sha512', self::SALT . $password);
@@ -381,4 +383,31 @@
             return ($hash == self::hash($password));
         }
     }
+
+
+
+    function consultarCorreoIfExist($mail){
+
+        $conexion = openBD();
+
+        $sentenciaText = "select * from usuario where mail=:mail";
+
+        $sentencia =$conexion->prepare($sentenciaText);
+        $sentencia->bindParam(":mail",$mail);
+        $sentencia->execute();
+        $resultado = $sentencia->fetch();
+        $conexion = closeBD();
+
+        if($resultado == false){
+            return false;
+        }else{
+            return true;
+        }
+
+    }
+
+
+
+
+
 ?>

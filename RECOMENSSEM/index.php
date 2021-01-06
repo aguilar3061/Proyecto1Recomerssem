@@ -117,13 +117,13 @@ include_once('php_partials/menu.php');
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">No se puede iniciar sesion</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Bien venido</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    Credenciales no validas
+                    Iniciado sesion correctamente 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -148,8 +148,8 @@ include_once('php_partials/menu.php');
 
 
     <!-- ESTAS DOS LINEAS ME DAN CONFLICTTOO POR ESO NO MUESTRA EL MENSAJE CUANDO VUELVES DE INICAR SESION CONFORME ESTA OK  -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/script.js" charset="utf-8"></script> 
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js" charset="utf-8"></script>  -->
     <!-- ESTAS DOS LINEAS ME DAN CONFLICTTOO POR ESO NO MUESTRA EL MENSAJE CUANDO VUELVES DE INICAR SESION CONFORME ESTA OK  -->
 	 
 
