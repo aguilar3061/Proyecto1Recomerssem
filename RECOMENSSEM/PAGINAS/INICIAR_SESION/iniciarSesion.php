@@ -104,9 +104,9 @@
       if( $_SESSION['history'] == "iniciarsesionDisapprove"){
           ?>
           <script>
-            $(window).on('load', function() {
-              $('#modalUauarioMal').modal('show');
-            });
+            jQuery.noConflict(); 
+            $('#modalUauarioMal').modal('show');
+            
           </script>
           <?php
           $_SESSION['history']= "";
@@ -114,9 +114,9 @@
       }elseif( $_SESSION['history'] == "registroOK"){
         ?>
         <script>
-          $(window).on('load', function() {
-            $('#modalUauarioRegistroOK').modal('show');
-          });
+          jQuery.noConflict(); 
+          $('#modalUauarioRegistroOK').modal('show');
+          
         </script>
         <?php
         $_SESSION['history']= "";
