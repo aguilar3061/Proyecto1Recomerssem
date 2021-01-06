@@ -354,17 +354,31 @@
     function consultarUsuario($mail,$password){
 
         $conexion = openBD();
+        $hash = Password::hash($password);
 
         $sentenciaText = "select * from usuario where mail=:mail AND contrasenya=:contrasenya";
 
         $sentencia =$conexion->prepare($sentenciaText);
         $sentencia->bindParam(":mail",$mail);
-        $sentencia->bindParam(":contrasenya",$password);
+        $sentencia->bindParam(":contrasenya",$hash);
         $sentencia->execute();
         $resultado = $sentencia->fetchAll();
 
         $conexion = closeBD();
 
         return $resultado;
+    }
+
+
+
+    
+    class Password {
+        const SALT = 'EstoEsUnSalt';
+        public static function hash($password) {
+            return hash('sha512', self::SALT . $password);
+        }
+        public static function verify($password, $hash) {
+            return ($hash == self::hash($password));
+        }
     }
 ?>

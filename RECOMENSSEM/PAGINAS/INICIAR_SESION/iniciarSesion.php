@@ -1,6 +1,9 @@
 <?php
-include_once("../../php_partials/menu.php");
+  include_once("../../php_partials/menu.php");
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +31,7 @@ include_once("../../php_partials/menu.php");
         </a>
       </div>
       <div class="card-body">
-        <form action="../../php_controllers/iniciarSesionController.php" method="POST"  enctype="multipart/form-data">
+        <form action="/RECOMENSSEM/php_controllers/iniciarSesionController.php" method="POST"  enctype="multipart/form-data">
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Correo</label>
             <div class="col-sm-9">
@@ -48,6 +51,50 @@ include_once("../../php_partials/menu.php");
           
     </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalUauarioMal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">No se puede iniciar sesion</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Credenciales no validas
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
     
 </body>
+
+
+
+
+<?php
+ 
+  if(isset($_SESSION['history'])){
+      if( $_SESSION['history'] == "iniciarsesionDisapprove"){
+
+          ?>
+          <script>
+            $(window).on('load', function() {
+              $('#modalUauarioMal').modal('show');
+            });
+          </script>
+          <?php
+
+      }
+  }
+
+?>
+
+
 </html>

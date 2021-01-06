@@ -123,6 +123,29 @@ include_once('php_partials/menu.php');
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/script.js" charset="utf-8"></script>
+	
+	
+	
+<?php
 
+if(isset($_SESSION['history'])){
+    if( $_SESSION['history'] == "iniciarsesionOK"){
+
+        ?>
+        <script>
+          $(window).on('load', function() {
+            $('#modalUauarioOK').modal('show');
+          });
+        </script>
+        <?php
+        $_SESSION['history'] = "HOME";
+    }
+}else{
+
+    $_SESSION['history'] = "HOME";
+
+}
+
+?>
 
 </html>
