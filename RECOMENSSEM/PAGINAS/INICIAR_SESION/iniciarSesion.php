@@ -104,6 +104,7 @@
       if( $_SESSION['history'] == "iniciarsesionDisapprove"){
           ?>
           <script>
+
             jQuery.noConflict(); 
             $('#modalUauarioMal').modal('show');
             

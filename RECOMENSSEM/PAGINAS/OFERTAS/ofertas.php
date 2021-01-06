@@ -7,33 +7,17 @@
 	//http://localhost:8080/RECOMENSSEM/Paginas/OFERTAS/ofertas.php
 
 	$listaOfertas = selectOferta();
+
+
 	$_SESSION['points'] = selectPuntosUsuario($_SESSION['userID']);
-	$puntosObtenidos = $_SESSION['points'];
-
-	$listaOfertasYaCopradas = selectIdOfertaYaAdquiridas($_SESSION['userID']);
-
-
-	$ofertaSelecionID = 0;
-	$ofertaSelecionPrecio = 0;
-
 	if( isset($_SESSION['admin']) ){
 		$admin = true;
 	}else{
 		$admin = false;
-
-		if( isset($_POST['vengoDeAKI']) ){
-
-			if( $_POST['idOfertaSelecionada'].EXTR_IF_EXISTS ){
-				$ofertaSelecionID = $_POST['idOfertaSelecionada'];
-				$ofertaSelecionPrecio = $_POST['precioOferta'];
-			}
-		}
 	}
 
-
-
-
-
+	$listaOfertasYaCopradas = selectIdOfertaYaAdquiridas($_SESSION['userID']);
+        
 ?>
 
 
@@ -65,13 +49,20 @@
 
 				<div class="col mb-4" >
 
-
-					<form action="\RECOMENSSEM\PAGINAS\OFERTAS\Ofertas.php" method="POST" >
-
-
+			
+					<form action="\RECOMENSSEM\php_controllers\OfertaController.php" method="POST" >
 
 
-						<div id="<?php echo $oferta["idOferta"]?>" class="card h-100 bg-light" style="cursor: pointer;" >
+						<div id="<?php echo $oferta["idOferta"]?>" class="card h-100 bg-info 
+							<?php	
+							foreach($listaOfertasYaCopradas as $ofe){
+								if($ofe['Oferta_idOferta'] == $oferta["idOferta"]){
+									echo ' bg-danger';
+								}
+							}
+							?>" style="cursor: pointer;" >
+
+
 							<center>
 								<img src="/RECOMENSSEM/media/IMGoferta.png" width="80%" > 
 
@@ -107,7 +98,7 @@
 									}else{
 								?>
 
-									<button class="btn btn-outline-primary lang" key="Adquirir" type="submit" name="vengoDeAKI" style="float: right;" > Adquirir </i> </button>
+									<button class="btn btn-outline-primary lang" key="Adquirir" type="submit" name="AdquirirOFERTA" style="float: right;" > Adquirir </i> </button>
 
 								<?php
 									}
@@ -126,13 +117,7 @@
 				}
 			?>
 
-
-
-
-
 		</div>
-
-
 
 		<?php
 			if($admin == true){
@@ -142,9 +127,74 @@
 			}
 		?>
 
-   
 
-		
+        <!-- Modal -->
+        <div class="modal fade" id="modalPuntosInsuficientes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">COMPRAR OFERTA </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+					Lamentablemente no le llegan los puntos para adquirir esta oferta
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+
+      <!-- Modal -->
+	  <div class="modal fade" id="modalofertaYaFueAdquiridaAntes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">COMPRAR OFERTA </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+					Esta oferta ya ha sido adquirida anteriormente
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+
+      <!-- Modal -->
+	  <div class="modal fade" id="modalofertacomprada" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">COMPRAR OFERTA </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+					Compra realizada con exito
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+	
 	</body>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
@@ -154,53 +204,51 @@
 
 
 
+	<?php
 
-	<script>
-
-
-		if(<?php echo $ofertaSelecionID ?> !== 0){
-
-	
-			if(<?php echo $puntosObtenidos ?> > <?php echo $ofertaSelecionPrecio ?>){
-
-				// CANJEAR OFERTA OK
-				<?php
-					$SePuedeComprar=true;
-					foreach($listaOfertasYaCopradas as $ofertaaa){
-						if($ofertaaa['Oferta_idOferta'] == $ofertaSelecionID){
-							$SePuedeComprar=false;
-						}
-					}
+		if(isset($_SESSION['history'])){
+			
+			if( $_SESSION['history'] == "puntosInsuficientes"){
 				?>
+				<script>
+					jQuery.noConflict(); 
+					$('#modalPuntosInsuficientes').modal('show');
+				</script>
+				<?php
+				$_SESSION['history'] = "";
 
-
-				<?php
-					if($SePuedeComprar){
-						updatePuntosUsuario($_SESSION['userID'], $puntosObtenidos - $ofertaSelecionPrecio);
-						insertUsuarioOferta( $_SESSION['userID'], $ofertaSelecionID ); 
+			}elseif( $_SESSION['history'] == "ofertaYaFueAdquiridaAntes"){
 				?>
-						alert(" Oferta adquirida correctamente, se le enviara una copia al correo, id oferta: " + <?php echo $ofertaSelecionID ?> );
+				<script>
+					jQuery.noConflict(); 
+					$('#modalofertaYaFueAdquiridaAntes').modal('show');
+				</script>
 				<?php
-					}else{
+				$_SESSION['history'] = "";
+			}elseif( $_SESSION['history'] == "modalofertacomprada"){
 				?>
-						alert(" Esta oferta ya ha sido adquirida anteriormente" );
+				<script>
+					jQuery.noConflict(); 
+					$('#modalofertacomprada').modal('show');
+				</script>
 				<?php
-					}
-				?>
-				
-			}else{
-				alert(" Lamentablemente no le llegan los puntos para adquirir esta oferta ): ");
+				$_SESSION['history'] = "";
 			}
 
+		}else{
+
+			$_SESSION['history'] = "";
 
 		}
+
+
+
+	?>
 		
 
 
 
 
-	</script>
-		
 </html>
 
 
