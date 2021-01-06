@@ -3,7 +3,7 @@
     function openBD(){
         $servername = "localhost";
         $username = "root";
-        $password = "mysql";
+        $password = "";
         
 
         $conexion = new PDO("mysql:host=$servername;dbname=db_recomencem", $username, $password);
@@ -325,19 +325,31 @@
 
 
     function deleteOferta( $idOferta ){
-
+        deleteOfertaDeLosUsuarios($idOferta);
         $conexion = openBD();
-
         $sentenciaText = "
         DELETE FROM oferta WHERE idOferta=:idOferta;
         ";
         $sentencia =$conexion->prepare($sentenciaText);
-        $sentencia->bindParam(":idOferta",    $idOferta);
+        $sentencia->bindParam(":idOferta", $idOferta);
         $sentencia->execute();
-
         $conexion = closeBD();
-
     }
+
+    function deleteOfertaDeLosUsuarios( $idOferta ){
+        $conexion = openBD();
+        $sentenciaText = "
+        DELETE FROM usuario_has_oferta WHERE Oferta_idOferta=:idOferta;
+        ";
+        $sentencia =$conexion->prepare($sentenciaText);
+        $sentencia->bindParam(":idOferta", $idOferta);
+        $sentencia->execute();
+        $conexion = closeBD();
+    }
+
+
+
+
 
 
     function updateOferta($idOferta, $nombre, $Tienda_idTienda, $precioOferta){

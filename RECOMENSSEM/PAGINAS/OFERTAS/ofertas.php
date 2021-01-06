@@ -22,7 +22,6 @@
 
 
 
-<html >
 	<head>
 	
 		<!-- <link rel="stylesheet" href="style/stilos.css"> -->
@@ -37,7 +36,8 @@
 
 
 	</head>
-	<body>
+	
+	<body >
 
 				  
 		<br>
@@ -82,9 +82,9 @@
 								?>
 									
 								
-									<form action="../../php_controllers/OfertaController.php" method="POST" >
+									<form action="RECOMENSSEM/php_controllers/OfertaController.php" method="POST" >
 										<input value="<?php echo $oferta["idOferta"]?>" type="hidden" name="idOferta">
-										<button class="btn btn-outline-danger" type="submit" name="Eliminar"> <i class="far fa-trash-alt"></i> </button>  
+										<button style="float: right" class="btn btn-outline-danger" type="submit" name="Eliminar"> <i class="far fa-trash-alt"></i> </button>  
 									</form>
 
 									<form action="crearYmodificarOferta.php" method="POST" >
