@@ -121,7 +121,7 @@
         </script>
         <?php
         $_SESSION['history']= "";
-    }  
+      }  
   }
 
 
