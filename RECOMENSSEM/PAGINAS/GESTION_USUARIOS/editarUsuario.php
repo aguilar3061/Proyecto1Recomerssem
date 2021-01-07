@@ -74,7 +74,8 @@
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Contrasenya</label>
                             <div class="col-sm-10">
-                                <input type="password" name="contrasenya" id="contrasenya" class="form-control" placeholder="contrasenya" required value="<?php echo $contrasenya?>"> 
+                                <input type="password" disabled="disabled" name="contrasenya42432" id="contrasenya23424332" class="form-control" placeholder="contrasenya" required value="<?php echo $contrasenya?>"> 
+                                <input type="hidden" name="contrasenya" id="contrasenya" class="form-control" placeholder="contrasenya" required value="<?php echo $contrasenya?>"> 
                             </div>
                         </div>
                         <div class="form-group row">
