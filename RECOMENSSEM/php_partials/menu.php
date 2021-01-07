@@ -28,13 +28,13 @@ session_start();
    
     <ul class="navbar-nav">
       <div style="margin-right: 25px;">
-      <img src="/RECOMENSSEM/media/catalonia.png" class="translate" id="cat" width="25" height="25" />
+      <img src="/RECOMENSSEM/media/catalonia.png" class="translate" id="cat" width="25" height="25" style="cursor: pointer;"/>
       &nbsp
       &nbsp
-      <img src="/RECOMENSSEM/media/spain.png" class="translate" id="es"  width="25" height="25"/>
+      <img src="/RECOMENSSEM/media/spain.png" class="translate" id="es"  width="25" height="25" style="cursor: pointer;"/>
       &nbsp
       &nbsp
-      <img src="/RECOMENSSEM/media/unitedKingdom.png" class="translate" id="eng"  width="25" height="25"/>
+      <img src="/RECOMENSSEM/media/unitedKingdom.png" class="translate" id="eng"  width="25" height="25" style="cursor: pointer;"/>
       </div>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
