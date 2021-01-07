@@ -93,7 +93,7 @@
 						}
 					?>">
 									
-							<img src="/RECOMENSSEM/media/MiniaturaJuego3.jpg.PNG" class="card-img-top" alt="Enviar formulario"> 
+							<img src="/RECOMENSSEM/media/MiniaturaJuego3.jpg" class="card-img-top" alt="Enviar formulario"> 
 							<div class="card-body">
 								<strong class="lang" key="Juego3"> Juego 3</strong>   
 								<br>    
