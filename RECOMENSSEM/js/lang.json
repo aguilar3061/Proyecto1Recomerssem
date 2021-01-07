@@ -1,6 +1,6 @@
 {
     "cat":{
-        "Noticias":"Notícia",
+        "Noticias":"Notícies",
         "Juegos":"Jocs",
         "Ofertas":"Ofertes",
         "GestionUser":"Gestionar usuaris",
@@ -31,9 +31,9 @@
         "Coste":"Cost: "
     },
     "es":{
-        "Noticias":"Noticia",
+        "Noticias":"Noticias",
         "Juegos":"Juegos",
-        "Ofertas":"Ofertass",
+        "Ofertas":"Ofertas",
         "GestionUser":"Gestionar usuarios",
         "CerrarSesion":"Cerrar sesion",
         "IniciarSesion":"Iniciar sesion",
