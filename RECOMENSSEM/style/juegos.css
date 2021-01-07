@@ -1,4 +1,10 @@
 
+body {
+    background-image: url("/RECOMENSSEM/media/fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 #puntos{
     
     text-align: center; 

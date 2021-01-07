@@ -20,7 +20,7 @@
         
 ?>
 
-
+<html> 
 
 	<head>
 	
@@ -29,7 +29,6 @@
 		<link rel="stylesheet" href="../../style/bootstrap.min.css">
 		<link rel="stylesheet" href="../../style/ofertas.css">
 
-
        <!-- ICONOS -->
 	   <link href="../../FONTAWESOME/fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet"> <!--load all styles -->
 	   
@@ -37,7 +36,7 @@
 
 	</head>
 	
-	<body >
+	<body>
 
 				  
 		<br>

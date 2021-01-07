@@ -23,13 +23,14 @@
 
 
 <html>
+
 	<head>
 	
 		<!-- <link rel="stylesheet" href="style/stilos.css"> -->
 		<!-- <script src="js/script.js"></script> -->
 		<link rel="stylesheet" href="../../style/bootstrap.min.css">
 		<link rel="stylesheet" href="../../style/juegos.css"> 
-
+		
 		<!-- ICONOS -->
 		<link href="../../FONTAWESOME/fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet"> <!--load all styles -->
       
@@ -123,10 +124,6 @@
 				</div>	
 
 			</div>	
-
-			<div id="puntos">
-				<h3> <p class="lang" key="Puntos">Puntos: </p> <?php echo $_SESSION['points']?>  </h3>
-			</div>
 
 		</div>
 

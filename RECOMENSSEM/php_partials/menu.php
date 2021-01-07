@@ -1,7 +1,17 @@
 <?php 
 
-session_start();
+  session_start();
 
+  include_once  $_SERVER['DOCUMENT_ROOT'] . '/RECOMENSSEM/php_librarys/bd.php' ;
+
+
+  $url= $_SERVER["REQUEST_URI"];
+
+  if(isset($_SESSION['user'])){
+
+    $_SESSION['points'] = selectPuntosUsuario($_SESSION['userID']);
+
+  }
 
 ?>
 <nav class="navbar navbar-expand-lg  navbar-dark bg-primary">
@@ -25,7 +35,7 @@ session_start();
       
     </ul>
    
-    <ul class="navbar-nav">
+    <ul class="navbar-nav" style="align-items: center;">
       <div style="margin-right: 25px;">
       <img src="/RECOMENSSEM/media/catalonia.png" class="translate" id="cat" width="25" height="25" style="cursor: pointer;"/>
       &nbsp
@@ -35,6 +45,16 @@ session_start();
       &nbsp
       <img src="/RECOMENSSEM/media/unitedKingdom.png" class="translate" id="eng"  width="25" height="25" style="cursor: pointer;"/>
       </div>
+   
+      <?php if(isset($_SESSION['user']) && $url != "/RECOMENSSEM/index.php" && $url != "/RECOMENSSEM/PAGINAS/INFO_NOTICIAS/infonoti.php"){?>
+        &nbsp
+        &nbsp
+		  	<p style="margin:0; color:white;">Puntos: <?php echo $_SESSION['points']?>  </p>
+        &nbsp
+        &nbsp
+      <?php
+      }?>
+     
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-user"></i>
@@ -42,18 +62,32 @@ session_start();
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
         <?php if(isset($_SESSION['user'])){?>
-          <?php if(isset($_SESSION['admin'])) { ?>
-            <a class="dropdown-item lang" key="GestionUser" href="/RECOMENSSEM/PAGINAS/GESTION_USUARIOS/gestionUsuarios.php" id="gestionUsuarios" >Gestionar usuarios</a>
-          <?php }?>
-            <a class="dropdown-item lang" key="CerrarSesion" href="/RECOMENSSEM/PAGINAS/LOGOUT/logout.php" id="cerrarSesion" >Cerrar sesion</a>
-
-          <?php
-          }else{?>
-              <a class="dropdown-item lang" key="IniciarSesion" href="/RECOMENSSEM/PAGINAS/INICIAR_SESION/iniciarSesion.php" id="iniciarSesion">Iniciar sesion</a>
-              <a class="dropdown-item lang" key="Registrarse" href="/RECOMENSSEM/PAGINAS/REGISTRO/registro.php" id="Registrarse">Registrarse</a><?php } ?>
+            <?php if(isset($_SESSION['admin'])){ ?>
+              <a class="dropdown-item lang" key="GestionUser" href="/RECOMENSSEM/PAGINAS/GESTION_USUARIOS/gestionUsuarios.php" id="gestionUsuarios" >Gestionar usuarios</a>
+            <?php }?>
+              <a class="dropdown-item lang" key="CerrarSesion" href="/RECOMENSSEM/PAGINAS/LOGOUT/logout.php" id="cerrarSesion" >Cerrar sesion</a>
+              
+            <?php
+        }else{?>
+            <a class="dropdown-item lang" key="IniciarSesion" href="/RECOMENSSEM/PAGINAS/INICIAR_SESION/iniciarSesion.php" id="iniciarSesion">Iniciar sesion</a>
+            <a class="dropdown-item lang" key="Registrarse" href="/RECOMENSSEM/PAGINAS/REGISTRO/registro.php" id="Registrarse">Registrarse</a>
+        <?php } ?>
           
         </div>
       </li>
+
+
+      <?php if(isset($_SESSION['user'])){?>
+
+        &nbsp
+        &nbsp
+        <p style="margin:0; color:white; font-weight: bold;"><?php echo $_SESSION['user']?></p>
+        &nbsp
+        &nbsp 
+
+        <?php
+      }?>
+     
     </ul>
   </div>
 </nav>
