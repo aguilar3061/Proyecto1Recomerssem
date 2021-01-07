@@ -1,59 +1,174 @@
-<?php 
-
-session_start();
-
-
+<?php
+include_once('php_partials/menu.php');
 ?>
-<nav class="navbar navbar-expand-lg  navbar-dark bg-primary">
-    <a href="/RECOMENSSEM/index.php">
-    <img src="/RECOMENSSEM/media/logo-ninot-small.png" alt="logo" width="100" height="45">
 
-    </a>
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <link rel="stylesheet" href="style/bootstrap.min.css">
+        <link rel="stylesheet" href="/RECOMENSSEM/style/index.css">
+        <!-- ICONOS -->
+        <link href="FONTAWESOME/fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet">
+
+
     
- 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent" 
-  >
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown">
-        <?php if(isset($_SESSION['user'])){?>
-          <a class="navbar-brand lang" key="Noticias" href="/RECOMENSSEM/PAGINAS/INFO_NOTICIAS/infonoti.php" style="padding-left: 20px;">Noticias</a>
-          <a class="navbar-brand lang" key="Juegos" href="/RECOMENSSEM/PAGINAS/JUEGOS/juegos.php">Juegos</a>
-          <a class="navbar-brand lang" key="Ofertas" href="/RECOMENSSEM/PAGINAS/OFERTAS/ofertas.php">Ofertas</a>
-          <?php
-          }?>
-      </li>
-      
-    </ul>
-   
-    <ul class="navbar-nav">
-      <div style="margin-right: 25px;">
-      <img src="/RECOMENSSEM/media/catalonia.png" class="translate" id="cat" width="25" height="25" style="cursor: pointer;"/>
-      &nbsp
-      &nbsp
-      <img src="/RECOMENSSEM/media/spain.png" class="translate" id="es"  width="25" height="25" style="cursor: pointer;"/>
-      &nbsp
-      &nbsp
-      <img src="/RECOMENSSEM/media/unitedKingdom.png" class="translate" id="eng"  width="25" height="25" style="cursor: pointer;"/>
-      </div>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-user"></i>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+        <style>
+            body {
+                background-image: url("media/fondo.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
+    </head>
 
-        <?php if(isset($_SESSION['user'])){?>
-          <?php if(isset($_SESSION['admin'])) { ?>
-            <a class="dropdown-item lang" key="GestionUser" href="/RECOMENSSEM/PAGINAS/GESTION_USUARIOS/gestionUsuarios.php" id="gestionUsuarios" >Gestionar usuarios</a>
-          <?php }?>
-            <a class="dropdown-item lang" key="CerrarSesion" href="/RECOMENSSEM/PAGINAS/LOGOUT/logout.php" id="cerrarSesion" >Cerrar sesion</a>
+    <body>
+        <!-- Contenedor principal -->
+        <div class="container mt-3 w-50" style="height: 78vh; min-height: auto; background-color: rgba(44, 62, 80, 0.8);">
+            <div style="position: relative;
+                        top:50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                        text-align: center;">
 
-          <?php
-          }else{?>
-              <a class="dropdown-item lang" key="IniciarSesion" href="/RECOMENSSEM/PAGINAS/INICIAR_SESION/iniciarSesion.php" id="iniciarSesion">Iniciar sesion</a>
-              <a class="dropdown-item lang" key="Registrarse" href="/RECOMENSSEM/PAGINAS/REGISTRO/registro.php" id="Registrarse">Registrarse</a><?php } ?>
-          
+                <div class="row w-100 align-items-center">
+                    <div class="col text-center">
+                        <a href="PAGINAS/INFO_NOTICIAS/infonoti.php" class="btn btn-warning regular-button w-50 lang" key="Noticias" style="height: 100px; font-size: 30px; line-height:85px;"> Noticias </a>
+                    </div>
+                </div>
+
+                <?php if (isset($_SESSION['user'])) { ?>
+                    <div class="row w-100 align-items-center mt-4" style="display: block">
+                        <div class="col text-center">
+                            <a href="PAGINAS/JUEGOS/juegos.php" class="btn btn-warning regular-button w-50 lang" key="Juegos" style="height: 100px; font-size: 30px; line-height:85px;"> Juegos </a>
+                        </div>
+                    </div>
+
+                    <div class="row w-100 align-items-center mt-4" style="display: block">
+                        <div class="col text-center">
+                            <a href="PAGINAS/OFERTAS/ofertas.php" class="btn btn-warning regular-button w-50 lang" key="Ofertas" style="height: 100px; font-size: 30px; line-height:85px;"> Ofertas </a>
+                        </div>
+                    </div>
+
+                <?php
+                } else { ?>
+                <div class="row w-100 align-items-center mt-4" style="display: none">
+                    <div class="col text-center">
+                        <a href="PAGINAS/JUEGOS/juegos.php" class="btn btn-warning regular-button w-50 lang" key="Juegos" style="height: 100px; font-size: 30px; line-height:85px;"> Juegos </a>
+                    </div>
+                </div>
+
+                    <div class="row w-100 align-items-center mt-4" style="display: none">
+                        <div class="col text-center">
+                            <a href="PAGINAS/OFERTAS/ofertas.php" class="btn btn-warning regular-button w-50 lang" key="Ofertas" style="height: 100px; font-size: 30px; line-height:85px;"> Ofertas </a>
+                        </div>
+                    </div>
+                <?php } ?>
+
+                <div class="row mt-4" data-toggle="modal" data-target="#exampleModal">
+                    <div class="" style="width: 71%; text-align:right; font-size:20px;">
+                        <a href="#" class="lang" key="Ayuda">Ayuda</a>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title lang" key="ComoFunciona" id="exampleModalLabel">Como funciona</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                        <p class="lang" key="Ayuda1">
+                            - Noticias: En la sección Noticias encontrarás toda la actualidad del Mercat del Ninot, y de información de
+                            quienes somos
+                        </p>
+                            <br><br>
+                        <p class="lang" key="Ayuda2">
+                            - Juegos: En la sección Juegos, exlusiva para usuarios de nuestra página, podrás acceder a los cuatro juegos que tenemos disponibles en nuestra página web,
+                            con los cuales podras conseguir puntos para canjear en nuestros productos
+                        </p>
+                            <br><br>
+                        <p class="lang" key="Ayuda3">
+                            - Ofertas: En la sección Ofertas, exclusiva para usuarios registrados en nuestra página, podras ver todas las ofertas que
+                            ofrecemos, y gracias a los puntos conseguidos en los juegos, podrás canjearlos en estas
+                        </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary lang" key="AyudaCerrar" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </li>
-    </ul>
-  </div>
-</nav>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalUauarioOK" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Bien venido</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Iniciado sesion correctamente 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </body>
+    <footer class="bg-primary">
+        <?php
+        include_once("php_partials/footer.php");
+        ?>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js" charset="utf-8"></script> 
+  
+	 
+
+    <?php
+        if(isset($_SESSION['history'])){
+            if( $_SESSION['history'] == "iniciarsesionOK"){
+                ?>
+                <script>
+                    jQuery.noConflict(); 
+                    $('#modalUauarioOK').modal('show');
+                </script>
+                <?php
+                $_SESSION['history'] = "HOME";
+            }
+        }else{
+
+            $_SESSION['history'] = "HOME";
+
+        }
+    ?>
+
+
+</html>
+
