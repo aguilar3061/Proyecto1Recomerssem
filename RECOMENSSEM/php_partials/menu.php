@@ -15,9 +15,8 @@ session_start();
   >
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
-        <a class="navbar-brand lang"  href="/RECOMENSSEM/index.php">Mercat del ninot</a>
         <?php if(isset($_SESSION['user'])){?>
-          <a class="navbar-brand lang" key="Noticias" href="/RECOMENSSEM/PAGINAS/INFO_NOTICIAS/infonoti.php">Noticias</a>
+          <a class="navbar-brand lang" key="Noticias" href="/RECOMENSSEM/PAGINAS/INFO_NOTICIAS/infonoti.php" style="padding-left: 20px;">Noticias</a>
           <a class="navbar-brand lang" key="Juegos" href="/RECOMENSSEM/PAGINAS/JUEGOS/juegos.php">Juegos</a>
           <a class="navbar-brand lang" key="Ofertas" href="/RECOMENSSEM/PAGINAS/OFERTAS/ofertas.php">Ofertas</a>
           <?php
