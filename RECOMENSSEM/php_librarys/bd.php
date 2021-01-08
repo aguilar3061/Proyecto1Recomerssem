@@ -322,6 +322,38 @@
 
     }
 
+    // Seleccionar una noticia
+    function selectUnaNoticia($id){
+        $conexion = openBD();
+
+        $sentenciaText = "select * from infonoticia where id=$id";
+
+        $sentencia =$conexion->prepare($sentenciaText);
+        $sentencia->execute();
+        $resultado = $sentencia->fetchAll();
+
+        $conexion = closeBD();
+
+        return $resultado;
+    }
+
+    // Insertar una noticia nueva
+    function insertarNoticia( $nombre, $texto){
+
+        $conexion = openBD();
+
+
+        $sentenciaText = "insert into infonoticia (titulo, texto) values (:nombre, :texto) ";
+        $sentencia =$conexion->prepare($sentenciaText);
+        $sentencia->bindParam(":nombre",    $nombre);
+        $sentencia->bindParam(":texto",    $texto);
+
+
+        $sentencia->execute();
+        $conexion = closeBD();
+
+    }
+
 
 
     function deleteOferta( $idOferta ){
@@ -336,6 +368,7 @@
         $conexion = closeBD();
     }
 
+
     function deleteOfertaDeLosUsuarios( $idOferta ){
         $conexion = openBD();
         $sentenciaText = "
@@ -348,8 +381,17 @@
     }
 
 
-
-
+    // Eliminar noticia
+    function deleteNoticia( $id ){
+        $conexion = openBD();
+        $sentenciaText = "
+        DELETE FROM infonoticia WHERE id=:id;
+        ";
+        $sentencia =$conexion->prepare($sentenciaText);
+        $sentencia->bindParam(":id", $id);
+        $sentencia->execute();
+        $conexion = closeBD();
+    }
 
 
     function updateOferta($idOferta, $nombre, $Tienda_idTienda, $precioOferta){
@@ -361,6 +403,23 @@
         $sentencia->bindParam(':nombre',$nombre);
         $sentencia->bindParam(':Tienda_idTienda',$Tienda_idTienda);
         $sentencia->bindParam(':precioOferta', $precioOferta);
+
+        $sentencia->execute();
+    
+        $conexion = closeBD();
+    
+    }
+
+    // Actualizar noticia
+    function updateNoticia($id, $titulo, $texto){
+        
+        $conexion = openBD();
+    
+        
+        $sentenciaText = "update infonoticia  SET titulo = :titulo, texto = :texto where id = $id";
+        $sentencia = $conexion->prepare($sentenciaText);
+        $sentencia->bindParam(':titulo',$titulo);
+        $sentencia->bindParam(':texto',$texto);
 
         $sentencia->execute();
     
