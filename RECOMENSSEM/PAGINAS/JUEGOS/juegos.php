@@ -51,7 +51,7 @@
 						}
 					?>">	
 									
-							<img src="/RECOMENSSEM/media/Captura.PNG" class="card-img-top" alt="Enviar formulario"> 
+							<img src="/RECOMENSSEM/media/FotoJuegoArnau.png" class="card-img-top" alt="Enviar formulario"> 
 							<div class="card-body">
 								<strong class="lang" key="Juego1"> Juego 1</strong>   
 								<br>    
@@ -72,7 +72,7 @@
 							
 							
 								
-					<img src="/RECOMENSSEM/media/Captura.PNG" class="card-img-top" alt="Enviar formulario"> 
+					<img src="/RECOMENSSEM/media/FotoJuegoAlbert.png" class="card-img-top" alt="Enviar formulario"> 
 
 							<div class="card-body">
 								<strong class="lang" key="Juego2"> Juego 2</strong>   
@@ -94,7 +94,7 @@
 						}
 					?>">
 									
-							<img src="/RECOMENSSEM/media/MiniaturaJuego3.jpg" class="card-img-top" alt="Enviar formulario"> 
+							<img src="/RECOMENSSEM/media/FotoJuegoDani.png" class="card-img-top" alt="Enviar formulario"> 
 							<div class="card-body">
 								<strong class="lang" key="Juego3"> Juego 3</strong>   
 								<br>    
@@ -113,7 +113,7 @@
 						}
 					?>">
 						
-							<img src="/RECOMENSSEM/media/Captura.PNG" class="card-img-top" alt="Enviar formulario"> 
+							<img src="/RECOMENSSEM/media/FotoJuegoCarlos.png" class="card-img-top" alt="Enviar formulario"> 
 							<div class="card-body">
 								<strong class="lang" key="Juego4"> Juego 4</strong>   
 								<br>    
