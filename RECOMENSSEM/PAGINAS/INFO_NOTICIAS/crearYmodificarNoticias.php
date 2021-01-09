@@ -38,6 +38,7 @@ $listaTIENDAS = selectTienda();
         $id = $Info[0]['id'];
         $nombre = $Info[0]['titulo'];
         $texto = $Info[0]['texto'];
+        $img = $Info[0]['img'];
     } else {
         $form = 0;
         $id = 0;
@@ -50,7 +51,7 @@ $listaTIENDAS = selectTienda();
         <div class="card">
 
             <div class="card-header text-white bg-primary">
-                Crear Noticia
+                <?php  if ($form == false) {echo 'Crear Noticia';} else { echo 'Editar Noticia';} ?>
             </div>
             <div class="card-body">
                 <form action="../../php_controllers/NoticiaController.php" method="POST" enctype="multipart/form-data">
@@ -67,6 +68,17 @@ $listaTIENDAS = selectTienda();
                         <label class="col-sm-2 col-form-label">Descripcion</label>
                         <div class="col-sm-10">
                             <input type="text" name="desc" id="desc" class="form-control" placeholder="Escribe una descricion para la tienda" required value="<?php  if ($form == true) {echo $texto;} ?>">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Imagen</label>
+                        <div class="col-sm-10">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFileLang" name="file">
+                                <label class="custom-file-label" for="customFileLang" data-browse="Elegir">Seleccionar Archivo</label>
+                            </div>
+                            
                         </div>
                     </div>
 

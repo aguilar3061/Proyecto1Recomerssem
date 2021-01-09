@@ -338,15 +338,16 @@
     }
 
     // Insertar una noticia nueva
-    function insertarNoticia( $nombre, $texto){
+    function insertarNoticia( $nombre, $texto, $img){
 
         $conexion = openBD();
 
 
-        $sentenciaText = "insert into infonoticia (titulo, texto) values (:nombre, :texto) ";
+        $sentenciaText = "insert into infonoticia (titulo, texto, img) values (:nombre, :texto, :img) ";
         $sentencia =$conexion->prepare($sentenciaText);
         $sentencia->bindParam(":nombre",    $nombre);
         $sentencia->bindParam(":texto",    $texto);
+        $sentencia->bindParam(":img",    $img);
 
 
         $sentencia->execute();
@@ -411,15 +412,16 @@
     }
 
     // Actualizar noticia
-    function updateNoticia($id, $titulo, $texto){
+    function updateNoticia($id, $titulo, $texto, $img){
         
         $conexion = openBD();
     
         
-        $sentenciaText = "update infonoticia  SET titulo = :titulo, texto = :texto where id = $id";
+        $sentenciaText = "update infonoticia  SET titulo = :titulo, texto = :texto, img = :img where id = $id";
         $sentencia = $conexion->prepare($sentenciaText);
         $sentencia->bindParam(':titulo',$titulo);
         $sentencia->bindParam(':texto',$texto);
+        $sentencia->bindParam(':img',$img);
 
         $sentencia->execute();
     
