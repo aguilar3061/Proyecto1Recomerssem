@@ -7,25 +7,15 @@ carlos 	--> ofertas, juegos
 
 
 
-NOTICIAS
-eliminar
-modificar
-insertar
-
-
-JUEGOS
-fotos
-
-VIDEO 
-
-
 
 IDIOMA
 cambiar pleas hollder registro
 
 
+
+
 MSG
-cerar sesuion
+cerar sesion
 admin
 
 
