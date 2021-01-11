@@ -6,12 +6,11 @@ carlos 	--> ofertas, juegos
 
 
 
-
-
 IDIOMA
+arreglar idioma con variable de sesion
+alertas idomas
 cambiar pleas hollder registro
-
-
+corregir faltas de ortografia
 
 
 MSG
@@ -23,3 +22,8 @@ JUEGOS
 Es podran administrar 
 quants punts guanyarà l’usuari 
 si supera el joc. 
+
+
+CORREOO
+olvidar contraseña
+ofertas por correo
