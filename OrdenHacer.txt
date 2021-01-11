@@ -27,3 +27,7 @@ si supera el joc.
 CORREOO
 olvidar contraseña
 ofertas por correo
+
+
+ERORES MYSQL
+error conexion
