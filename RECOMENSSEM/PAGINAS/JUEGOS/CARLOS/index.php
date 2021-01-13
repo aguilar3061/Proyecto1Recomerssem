@@ -26,7 +26,7 @@
 
 		<div id="inicio">
 			<button id="play" onclick="reproducirMusica()">
-				Play GAME
+				CLICKA AQUI PARA JUGAR
 			</button>
 			<p>
 				Ordena los productos arrastrando, ya sea nevera, frutero, armario....

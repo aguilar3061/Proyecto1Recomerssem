@@ -373,7 +373,7 @@ function calculoPuntos3(img, id ,puntos){
 	// y comparamos haber si esta en la posicion correcta 
 	if( img.dataset.lugar1 == separarBirg[1] || img.dataset.lugar2 == separarBirg[1] || img.dataset.lugar3 == separarBirg[1]){ 
 		puntos = puntos + 10;
-	}	
+	}
 	
 	// devolvemos todos los puntos
 	return puntos;

@@ -1,4 +1,7 @@
 
+
+
+
 #juego {
 	
 	width: 1280px;
@@ -45,11 +48,17 @@
 }
 
 #play{
+	/* background-size: 1280px 720px; */
+
+	background-image: url("../media/cocina/imgBoton1.png");
+	background-repeat: no-repeat;
+	background-attachment: inherit; 
+
 	font-weight: bold;
 	font-size: 20px;
 	border:1px solid #000; 
 	border-radius:5px; 
-	background-color: #5EEBED;
+	
 	width:100%;
 	height:100%;
 }
