@@ -12,22 +12,24 @@ alertas idomas
 cambiar pleas hollder registro
 corregir faltas de ortografia
 
+USUARIOS
+confirmacion eliminar
 
 MSG
 cerar sesion
 admin
-
 
 JUEGOS
 Es podran administrar 
 quants punts guanyarà l’usuari 
 si supera el joc. 
 
+OFERTAS 
+codigo aleatorio al congear
 
 CORREOO
 olvidar contraseña
 ofertas por correo
-
 
 ERORES MYSQL
 error conexion
