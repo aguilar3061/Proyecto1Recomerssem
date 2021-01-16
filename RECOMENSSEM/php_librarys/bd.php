@@ -3,7 +3,7 @@
     function openBD(){
         $servername = "localhost";
         $username = "root";
-        $password = "";
+        $password = "mysql";
         
 
         try{
@@ -489,8 +489,25 @@
         }catch (Exception $e) {
             echo 'Excepción capturada: ',  $e->getMessage(), "\n";
         }
+
+
+    function updateJuego($idJuego, $puntos){
         
+        $conexion = openBD();
+
+        $sentenciaText = "update Juego SET puntos = :puntos where idJuego = $idJuego";
+        $sentencia = $conexion->prepare($sentenciaText);
+
+        $sentencia->bindParam(':puntos',$puntos);
+
+        $sentencia->execute();
+    
+        $conexion = closeBD();
+    
     }
+
+
+
 
 
     function updateOferta($idOferta, $nombre, $Tienda_idTienda, $precioOferta){

@@ -18,6 +18,13 @@
 		}
 	}
 
+	if( isset($_SESSION['admin']) ){
+		$admin = true;
+	}else{
+		$admin = false;
+	}
+
+	$listaJuegos = selectJuegos();
 
 ?>
 
@@ -38,6 +45,10 @@
 	</head>
 	<body>
 	<br>
+		<?php
+			if( !$admin ){
+		?>
+
 
 		<div class="container">
 			<div class="row">
@@ -126,6 +137,77 @@
 			</div>	
 
 		</div>
+
+		<?php
+			}else{
+		?>
+
+			<div class="card" >
+				<div class="card-body">
+					<form action="/RECOMENSSEM/php_controllers/JuegosController.php" method="POST">	
+
+			
+						<label for="cbxJuego">Modificar puntos Juego:</label>
+						<select name="cbxJuego" id="cbxJuego">
+							<option value="1"> Juego1 </option>
+							<option value="2"> Juego2 </option>
+							<option value="3"> Juego3 </option>
+							<option value="4"> Juego4 </option>
+						</select>
+					
+						<input required placeholder="Puntos" type="number" id="puntos" name="puntos" min="1" style="margin:0;" >
+						<label> Guardar: </label>
+						<button class="btn btn-outline-primary" type="submit" name="UpdateJuego" style="vertical-align: inherit;"> <i class="fas fa-save"></i> </button>
+				
+					
+
+					</form>  
+				
+			
+				<table class="table table-responsive table-bordered" style="text-align:center">
+					<thead>
+						<tr>
+							<th>JUEGO</th>
+							<th>Puntos juego</th>
+							<th>Foto</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td> <?php echo $listaJuegos[0]["nombre"] ?> </td>
+							<td> <?php echo $listaJuegos[0]["puntos"] ?> </td>
+							<td> <div style="width: 200px; height: 100px;">
+								<img src="/RECOMENSSEM/media/FotoJuegoArnau.png" class="card-img-top" alt="Enviar formulario"> 
+							</div> </td> 
+						</tr>
+						<tr>
+						<td> <?php echo $listaJuegos[1]["nombre"] ?> </td>
+							<td> <?php echo $listaJuegos[1]["puntos"] ?> </td>
+							<td> <div style="width: 200px; height: 100px;">
+								<img src="/RECOMENSSEM/media/FotoJuegoAlbert.png" class="card-img-top" alt="Enviar formulario"> 
+							</div> </td> 
+						</tr>
+						<tr>
+						<td> <?php echo $listaJuegos[2]["nombre"] ?> </td>
+							<td> <?php echo $listaJuegos[2]["puntos"] ?> </td>
+							<td> <div class="img"style="width: 200px; height: 100px;">
+								<img src="/RECOMENSSEM/media/FotoJuegoDani.png" class="card-img-top" alt="Enviar formulario"> 
+							</div> </td> 
+						</tr>
+						<tr>
+						<td> <?php echo $listaJuegos[3]["nombre"] ?> </td>
+							<td> <?php echo $listaJuegos[3]["puntos"] ?> </td>
+							<td> <div style="width: 200px; height: 100px;">
+								<img src="/RECOMENSSEM/media/FotoJuegoCarlos.png" class="card-img-top" alt="Enviar formulario"> 
+							</div> </td> 
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+		<?php
+			}
+		?>
 
 
     <!-- Modal -->
@@ -236,5 +318,19 @@
 	}
 
 ?>
+
+
+
+
+<script>
+
+	function selecionarJuego(juego) {
+		document.getElementById("botonMenuJuegos").innerHTML = juego;
+		document.getElementById("botonMenuJuegos").value = juego;
+	
+	}
+
+</script>
+
 
 </html>
