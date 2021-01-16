@@ -19,11 +19,6 @@ MSG
 cerar sesion
 admin
 
-JUEGOS
-Es podran administrar 
-quants punts guanyarà l’usuari 
-si supera el joc. 
-
 OFERTAS 
 codigo aleatorio al congear
 
