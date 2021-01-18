@@ -131,6 +131,9 @@
         $conexion = openBD();
 
         try{
+			deleteHasJuegoUser($idUsuario);
+			deleteHasOfertaUser($idUsuario);
+			
             $sentenciaText = "
             DELETE FROM usuario WHERE idUsuario=:idUsuario;
             ";
@@ -146,6 +149,32 @@
     }
   
 
+    function deleteHasJuegoUser($Usuario_idUsuario){
+        $conexion = openBD();
+
+        $sentenciaText = "
+        DELETE FROM usuario_has_juego WHERE usuario_has_juego=:usuario_has_juego;
+        ";
+        $sentencia =$conexion->prepare($sentenciaText);
+        $sentencia->bindParam(":Usuario_idUsuario",$Usuario_idUsuario);
+        $sentencia->execute();
+
+        $conexion = closeBD();
+    }
+  
+    function deleteHasOfertaUser($Usuario_idUsuario){
+        $conexion = openBD();
+
+        $sentenciaText = "
+        DELETE FROM usuario_has_oferta WHERE Usuario_idUsuario=:Usuario_idUsuario;
+        ";
+        $sentencia =$conexion->prepare($sentenciaText);
+        $sentencia->bindParam(":Usuario_idUsuario",$Usuario_idUsuario);
+        $sentencia->execute();
+
+        $conexion = closeBD();
+    }
+  
 
 
     function selectPuntosUsuario($idUsuario){
