@@ -3,7 +3,7 @@
     function openBD(){
         $servername = "localhost";
         $username = "root";
-        $password = "mysql";
+        $password = "";
         
 
         try{
@@ -519,7 +519,7 @@
             echo 'Excepción capturada: ',  $e->getMessage(), "\n";
         }
 
-
+    }
     function updateJuego($idJuego, $puntos){
         
         $conexion = openBD();

@@ -122,6 +122,7 @@ include_once("../../php_partials/menu.php");
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="../../js/script.js" charset="utf-8"></script> -->
+  <script src="../../js/events.js" charset="utf-8"></script> -->
 
 
 
