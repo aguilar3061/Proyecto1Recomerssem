@@ -45,6 +45,23 @@
         
     }
 
+    function selectJuegos(){
+        $conexion = openBD();
+
+        $sentenciaText = "select * from juego ";
+
+        $sentencia =$conexion->prepare($sentenciaText);
+        $sentencia->execute();
+        $resultado = $sentencia->fetchAll();
+        $conexion = closeBD();
+        
+        return $resultado;
+    }
+
+
+
+
+
 
     function insertUsuarioOferta($Usuario_idUsuario,$Oferta_idOferta){
 

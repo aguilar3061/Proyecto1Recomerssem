@@ -1,5 +1,10 @@
 -- MariaDB dump 10.17  Distrib 10.4.14-MariaDB, for Win64 (AMD64)
---
+
+DROP DATABASE if exists DB_recomencem;
+CREATE DATABASE DB_recomencem;
+USE DB_recomencem;
+
+
 -- Host: 127.0.0.1    Database: db_recomencem
 -- ------------------------------------------------------
 -- Server version	10.4.14-MariaDB
@@ -75,7 +80,7 @@ DROP TABLE IF EXISTS `oferta`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `oferta` (
   `idOferta` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(25) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
   `Tienda_idTienda` int(11) NOT NULL,
   `precioOferta` int(11) NOT NULL,
   PRIMARY KEY (`idOferta`),
@@ -90,7 +95,7 @@ CREATE TABLE `oferta` (
 
 LOCK TABLES `oferta` WRITE;
 /*!40000 ALTER TABLE `oferta` DISABLE KEYS */;
-INSERT INTO `oferta` VALUES (1,'2x1 en fruta',2,15),(2,'15 % de descuento en cual',2,15);
+INSERT INTO `oferta` VALUES (1,'2x1 en fruta',2,15),(2,'15 % de descuento libro de ciencia',2,15);
 /*!40000 ALTER TABLE `oferta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -103,7 +108,7 @@ DROP TABLE IF EXISTS `tienda`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tienda` (
   `idTienda` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(25) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
   `img` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`idTienda`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
@@ -115,7 +120,14 @@ CREATE TABLE `tienda` (
 
 LOCK TABLES `tienda` WRITE;
 /*!40000 ALTER TABLE `tienda` DISABLE KEYS */;
-INSERT INTO `tienda` VALUES (1,'tienda1',NULL),(2,'tienda2',NULL);
+INSERT INTO `tienda` VALUES 
+(1,'FRUITES ANTOLÍN',NULL),
+(2,'LLIBRERIA DEL NINOT',NULL),
+(3,'ELS NOIS DE LA PLAÇA',NULL),
+(4,'YOLANDA',NULL),
+(5,'MB’S DEGUSTACIÓ',NULL),
+(6,'PEIXATERIA RIBERA',NULL);
+
 /*!40000 ALTER TABLE `tienda` ENABLE KEYS */;
 UNLOCK TABLES;
 
