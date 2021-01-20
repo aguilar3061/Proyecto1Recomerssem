@@ -1,5 +1,6 @@
 <?php
 include_once('php_partials/menu.php');
+include_once('php_config/config.php');
 ?>
 
 <!DOCTYPE html>
@@ -37,20 +38,20 @@ include_once('php_partials/menu.php');
 
                 <div class="row w-100 align-items-center">
                     <div class="col text-center">
-                        <a href="PAGINAS/INFO_NOTICIAS/infonoti.php" class="btn btn-warning regular-button w-50 lang" key="Noticias" style="height: 100px; font-size: 30px; line-height:85px;"> Noticias </a>
+                        <a href="PAGINAS/INFO_NOTICIAS/infonoti.php" class="btn btn-warning regular-button w-50 lang" key="Noticias" style="height: 100px; font-size: 30px; line-height:85px;"> <?php echo $lang['Noticias'] ?> </a>
                     </div>
                 </div>
 
                 <?php if (isset($_SESSION['user'])) { ?>
                     <div class="row w-100 align-items-center mt-4" style="display: block">
                         <div class="col text-center">
-                            <a href="PAGINAS/JUEGOS/juegos.php" class="btn btn-warning regular-button w-50 lang" key="Juegos" style="height: 100px; font-size: 30px; line-height:85px;"> Juegos </a>
+                            <a href="PAGINAS/JUEGOS/juegos.php" class="btn btn-warning regular-button w-50 lang" key="Juegos" style="height: 100px; font-size: 30px; line-height:85px;"> <?php echo $lang['Juegos'] ?> </a>
                         </div>
                     </div>
 
                     <div class="row w-100 align-items-center mt-4" style="display: block">
                         <div class="col text-center">
-                            <a href="PAGINAS/OFERTAS/ofertas.php" class="btn btn-warning regular-button w-50 lang" key="Ofertas" style="height: 100px; font-size: 30px; line-height:85px;"> Ofertas </a>
+                            <a href="PAGINAS/OFERTAS/ofertas.php" class="btn btn-warning regular-button w-50 lang" key="Ofertas" style="height: 100px; font-size: 30px; line-height:85px;"> <?php echo $lang['Ofertas'] ?> </a>
                         </div>
                     </div>
 
@@ -58,20 +59,20 @@ include_once('php_partials/menu.php');
                 } else { ?>
                 <div class="row w-100 align-items-center mt-4" style="display: none">
                     <div class="col text-center">
-                        <a href="PAGINAS/JUEGOS/juegos.php" class="btn btn-warning regular-button w-50 lang" key="Juegos" style="height: 100px; font-size: 30px; line-height:85px;"> Juegos </a>
+                        <a href="PAGINAS/JUEGOS/juegos.php" class="btn btn-warning regular-button w-50 lang" key="Juegos" style="height: 100px; font-size: 30px; line-height:85px;"> <?php echo $lang['Juegos'] ?> </a>
                     </div>
                 </div>
 
                     <div class="row w-100 align-items-center mt-4" style="display: none">
                         <div class="col text-center">
-                            <a href="PAGINAS/OFERTAS/ofertas.php" class="btn btn-warning regular-button w-50 lang" key="Ofertas" style="height: 100px; font-size: 30px; line-height:85px;"> Ofertas </a>
+                            <a href="PAGINAS/OFERTAS/ofertas.php" class="btn btn-warning regular-button w-50 lang" key="Ofertas" style="height: 100px; font-size: 30px; line-height:85px;"> <?php echo $lang['Ofertas'] ?> </a>
                         </div>
                     </div>
                 <?php } ?>
 
                 <div class="row mt-4" data-toggle="modal" data-target="#exampleModal">
                     <div class="" style="width: 71%; text-align:right; font-size:20px;">
-                        <a href="#" class="lang" key="Ayuda">Ayuda</a>
+                        <a href="#" class="lang" key="Ayuda"><?php echo $lang['Ayuda'] ?></a>
                     </div>
                 </div>
 
@@ -83,29 +84,26 @@ include_once('php_partials/menu.php');
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title lang" key="ComoFunciona" id="exampleModalLabel">Como funciona</h5>
+                            <h5 class="modal-title lang" key="ComoFunciona" id="exampleModalLabel"><?php echo $lang['ComoFunciona'] ?></h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
                         <p class="lang" key="Ayuda1">
-                            - Noticias: En la sección Noticias encontrarás toda la actualidad del Mercat del Ninot, y de información de
-                            quienes somos
+                        <?php echo $lang['Ayuda1'] ?>
                         </p>
                             <br><br>
                         <p class="lang" key="Ayuda2">
-                            - Juegos: En la sección Juegos, exlusiva para usuarios de nuestra página, podrás acceder a los cuatro juegos que tenemos disponibles en nuestra página web,
-                            con los cuales podras conseguir puntos para canjear en nuestros productos
+                        <?php echo $lang['Ayuda2'] ?>
                         </p>
                             <br><br>
                         <p class="lang" key="Ayuda3">
-                            - Ofertas: En la sección Ofertas, exclusiva para usuarios registrados en nuestra página, podras ver todas las ofertas que
-                            ofrecemos, y gracias a los puntos conseguidos en los juegos, podrás canjearlos en estas
+                        <?php echo $lang['Ayuda3'] ?>
                         </p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary lang" key="AyudaCerrar" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-secondary lang" key="AyudaCerrar" data-dismiss="modal"><?php echo $lang['BtnCerrar'] ?></button>
                         </div>
                     </div>
                 </div>
@@ -117,16 +115,16 @@ include_once('php_partials/menu.php');
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Bien venido</h5>
+                    <h5 class="modal-title" id="exampleModalLabel"><?php echo $lang['Bienvenido'] ?></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    Iniciado sesion correctamente 
+                <?php echo $lang['IniSesionCorrect'] ?>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $lang['BtnCerrar'] ?></button>
                 </div>
                 </div>
             </div>
@@ -145,11 +143,7 @@ include_once('php_partials/menu.php');
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/script.js" charset="utf-8"></script> 
-    <script src="js/events.js" charset="utf-8"></script> 
-  
 	 
 
     <?php

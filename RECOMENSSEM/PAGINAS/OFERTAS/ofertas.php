@@ -75,7 +75,7 @@
 							</center> 
 
 							<div class="card-footer badge-secondary ">
-								<label for="puntos"><p class="lang" key="Coste">Coste: </p> <?php echo $oferta['precioOferta'] ?></label>
+								<label for="puntos"><p class="lang" key="Coste"><?php echo $lang['Coste'] ?></p> <?php echo $oferta['precioOferta'] ?></label>
 								<?php
 									if($admin == true){
 								?>
@@ -97,7 +97,7 @@
 									}else{
 								?>
 
-									<button class="btn btn-outline-primary lang" key="Adquirir" type="submit" name="AdquirirOFERTA" style="float: right;" > Adquirir </i> </button>
+									<button class="btn btn-outline-primary lang" key="Adquirir" type="submit" name="AdquirirOFERTA" style="float: right;" > <?php echo $lang['Adquirir'] ?></i> </button>
 
 								<?php
 									}
@@ -132,16 +132,16 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">COMPRAR OFERTA </h5>
+                    <h5 class="modal-title" id="exampleModalLabel"><?php echo $lang['ComprarOferta'] ?></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-					Lamentablemente no le llegan los puntos para adquirir esta oferta
+				<?php echo $lang['ComprarOfertaText'] ?>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $lang['BtnCerrar'] ?></button>
                 </div>
                 </div>
             </div>
@@ -153,16 +153,16 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">COMPRAR OFERTA </h5>
+                    <h5 class="modal-title" id="exampleModalLabel"><?php echo $lang['ComprarOferta']?></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-					Esta oferta ya ha sido adquirida anteriormente
+				<?php echo $lang['ComprarOfertaText2'] ?>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $lang['BtnCerrar'] ?></button>
                 </div>
                 </div>
             </div>
@@ -174,16 +174,16 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">COMPRAR OFERTA </h5>
+                    <h5 class="modal-title" id="exampleModalLabel"><?php echo $lang['ComprarOferta']?></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-					Compra realizada con exito
+				<?php echo $lang['ComprarOfertaText3']?>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $lang['BtnCerrar'] ?></button>
                 </div>
                 </div>
             </div>
@@ -199,8 +199,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  	<script src="\RECOMENSSEM\js\script.js" charset="utf-8"></script>
-	  <script src="\RECOMENSSEM\js\events.js" charset="utf-8"></script>
 
 
 

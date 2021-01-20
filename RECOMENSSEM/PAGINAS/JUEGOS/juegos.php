@@ -1,5 +1,4 @@
 <?php
-
 	include_once("../../php_partials/menu.php");
 	require_once("../../php_librarys/bd.php");
 	
@@ -64,7 +63,7 @@
 									
 							<img src="/RECOMENSSEM/media/FotoJuegoArnau.png" class="card-img-top" alt="Enviar formulario"> 
 							<div class="card-body">
-								<strong class="lang" key="Juego1"> Juego 1</strong>   
+								<strong class="lang" key="Juego1"> <?php echo $lang['Juego1'] ?></strong>   
 								<br>    
 							</div>
 						
@@ -86,7 +85,7 @@
 					<img src="/RECOMENSSEM/media/FotoJuegoAlbert.png" class="card-img-top" alt="Enviar formulario"> 
 
 							<div class="card-body">
-								<strong class="lang" key="Juego2"> Juego 2</strong>   
+								<strong class="lang" key="Juego2"> <?php echo $lang['Juego2'] ?></strong>   
 								<br>    
 							</div>
 						
@@ -107,7 +106,7 @@
 									
 							<img src="/RECOMENSSEM/media/FotoJuegoDani.png" class="card-img-top" alt="Enviar formulario"> 
 							<div class="card-body">
-								<strong class="lang" key="Juego3"> Juego 3</strong>   
+								<strong class="lang" key="Juego3"> <?php echo $lang['Juego3'] ?></strong>   
 								<br>    
 							</div>
 						
@@ -126,7 +125,7 @@
 						
 							<img src="/RECOMENSSEM/media/FotoJuegoCarlos.png" class="card-img-top" alt="Enviar formulario"> 
 							<div class="card-body">
-								<strong class="lang" key="Juego4"> Juego 4</strong>   
+								<strong class="lang" key="Juego4"> <?php echo $lang['Juego4'] ?></strong>   
 								<br>    
 							</div>
 			
@@ -147,16 +146,16 @@
 					<form action="/RECOMENSSEM/php_controllers/JuegosController.php" method="POST">	
 
 			
-						<label for="cbxJuego">Modificar puntos Juego:</label>
+						<label for="cbxJuego"><?php echo $lang['ModificarPuntosJuego'] ?></label>
 						<select name="cbxJuego" id="cbxJuego">
-							<option value="1"> Juego1 </option>
-							<option value="2"> Juego2 </option>
-							<option value="3"> Juego3 </option>
-							<option value="4"> Juego4 </option>
+							<option value="1"> <?php echo $lang['Juego1'] ?> </option>
+							<option value="2"> <?php echo $lang['Juego2'] ?> </option>
+							<option value="3"> <?php echo $lang['Juego3'] ?> </option>
+							<option value="4"> <?php echo $lang['Juego4'] ?> </option>
 						</select>
 					
 						<input required placeholder="Puntos" type="number" id="puntos" name="puntos" min="1" style="margin:0;" >
-						<label> Guardar: </label>
+						<label> <?php echo $lang['SaveGame'] ?> </label>
 						<button class="btn btn-outline-primary" type="submit" name="UpdateJuego" style="vertical-align: inherit;"> <i class="fas fa-save"></i> </button>
 				
 					
@@ -167,9 +166,9 @@
 				<table class="table table-responsive table-bordered" style="text-align:center">
 					<thead>
 						<tr>
-							<th>JUEGO</th>
-							<th>Puntos juego</th>
-							<th>Foto</th>
+							<th><?php echo $lang['JuegoAdmin'] ?></th>
+							<th><?php echo $lang['JuegoPuntos'] ?></th>
+							<th><?php echo $lang['JuegoFoto'] ?></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -215,16 +214,16 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">JUEGO </h5>
+                    <h5 class="modal-title" id="exampleModalLabel"><?php echo $lang['JuegoAdmin'] ?></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-					Juego superado, enorabuena, ya tiens 100 puntos mas, que los podras gastar en las ofertas. 
+					<?php echo $lang['JuegoNotText'] ?>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $lang['BtnCerrar'] ?></button>
                 </div>
                 </div>
             </div>
@@ -236,16 +235,16 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">JUEGO</h5>
+                    <h5 class="modal-title" id="exampleModalLabel"><?php echo $lang['JuegoAdmin'] ?></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-					Juego no superado, ha seguir intentandolo!!
+					<?php echo $lang['JuegoNotText2'] ?>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $lang['BtnCerrar'] ?></button>
                 </div>
                 </div>
             </div>
@@ -257,16 +256,16 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">JUEGO</h5>
+                    <h5 class="modal-title" id="exampleModalLabel"><?php echo $lang['JuegoAdmin'] ?></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-					Juego ya superado anteriormente, enhorabuena!
+					<?php echo $lang['JuegoNotText3'] ?>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $lang['BtnCerrar'] ?></button>
                 </div>
                 </div>
             </div>
@@ -278,8 +277,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="\RECOMENSSEM\js\script.js" charset="utf-8"></script>
-	<script src="\RECOMENSSEM\js\events.js" charset="utf-8"></script>
 
 
 
