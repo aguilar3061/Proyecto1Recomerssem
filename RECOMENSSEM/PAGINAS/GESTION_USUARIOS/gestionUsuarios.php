@@ -35,10 +35,7 @@
                             
                         </div>
                         <div class="card-footer">
-                        <form action="../../php_controllers/gestionUsuarioController.php" method="POST" enctype="multipart/form-data">
-                                <button type="submit" name="uploadTrash" class="btn btn-outline-danger float-right" style="margin-left: 2px;" ><i class="fa fa-trash"></i></button>
-                                <input type="hidden" id="idUsuarioTrash" name="idUsuarioTrash" value=<?php echo $usuario["idUsuario"]?>>
-                        </form>
+                        <button type="button" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-outline-danger float-right" style="margin-left: 2px;" ><i class="fa fa-trash"></i></button>                   
                         <form action="editarUsuario.php" method="POST" enctype="multipart/form-data">
                                 <button type="submit" name="uploadEdit" class="btn btn-outline-primary float-right"  ><i class="fa fa-edit"></i></button>
                                 <input type="hidden" id="idUsuarioUpdate" name="idUsuarioUpdate" value=<?php echo $usuario["idUsuario"] ?>>
@@ -49,8 +46,32 @@
 			<?php
 				}
 			?>
+            
 
 		</div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Confirmación</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            ¿Estas Seguro que quieres eliminar este usuario?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                            <form action="../../php_controllers/gestionUsuarioController.php" method="POST" enctype="multipart/form-data">
+                                                 <button type="submit" name="uploadTrash" class="btn btn-outline-danger float-right" style="margin-left: 2px;" >Eliminar</button>
+                                                 <input type="hidden" id="idUsuarioTrash" name="idUsuarioTrash" value=<?php echo $usuario["idUsuario"]?>>
+                                            </form>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
 </body>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

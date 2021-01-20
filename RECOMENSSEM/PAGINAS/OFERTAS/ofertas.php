@@ -81,14 +81,11 @@
 								?>
 									
 								
-									<form action="RECOMENSSEM/php_controllers/OfertaController.php" method="POST" >
-										<input value="<?php echo $oferta["idOferta"]?>" type="hidden" name="idOferta">
-										<button style="float: right" class="btn btn-outline-danger" type="submit" name="Eliminar"> <i class="far fa-trash-alt"></i> </button>  
-									</form>
-
+									
+									<button style="float: right"  data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-outline-danger" type="button" name="Eliminar"> <i class="far fa-trash-alt"></i> </button>			
 									<form action="crearYmodificarOferta.php" method="POST" >
 										<input value="<?php echo $oferta["idOferta"]?>" type="hidden" name="idOferta" >
-										<button class="btn btn-outline-primary" type="submit" name="Update"> <i class="far fa-edit"></i> </button>
+										<button style="float: right" class="btn btn-outline-primary" type="submit" name="Update"> <i class="far fa-edit"></i> </button>
 									</form>  
 									
 
@@ -188,6 +185,30 @@
                 </div>
             </div>
         </div>
+
+		<!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Confirmación</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            ¿Estas Seguro que quieres eliminar esta oferta?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                            <form action="RECOMENSSEM/php_controllers/OfertaController.php" method="POST" >
+												<input value="<?php echo $oferta["idOferta"]?>" type="hidden" name="idOferta">
+												<button style="float: right" class="btn btn-outline-danger" type="submit" name="Eliminar"> Eliminar </button>  
+											</form>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
 
 
 
