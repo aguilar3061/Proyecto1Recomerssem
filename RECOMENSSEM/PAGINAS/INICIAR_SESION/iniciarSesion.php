@@ -36,7 +36,7 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label lang" key="Contrasenya"><?php echo $lang['Contrasenya'] ?></label>
             <div class="col-sm-9">
-              <input type="password" name="Contraseña" id="Contraseña" class="form-control" placeholder="<?php echo $lang['CorreoElectronico'] ?>" required>
+              <input type="password" name="Contraseña" id="Contraseña" class="form-control" placeholder="<?php echo $lang['Contrasenya'] ?>" required>
             </div>
           </div>
           <div class="float-right">
