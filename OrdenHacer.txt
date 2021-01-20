@@ -22,9 +22,3 @@ admin
 OFERTAS 
 codigo aleatorio al congear
 
-CORREOO
-olvidar contraseña
-ofertas por correo
-
-ERORES MYSQL
-error conexion

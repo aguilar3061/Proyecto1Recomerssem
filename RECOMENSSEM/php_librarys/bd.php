@@ -147,10 +147,11 @@
     function deleteUser($idUsuario){
         $conexion = openBD();
 
+        deleteHasJuegoUser($idUsuario);
+        deleteHasOfertaUser($idUsuario);
+
         try{
-			deleteHasJuegoUser($idUsuario);
-			deleteHasOfertaUser($idUsuario);
-			
+		
             $sentenciaText = "
             DELETE FROM usuario WHERE idUsuario=:idUsuario;
             ";
@@ -170,7 +171,7 @@
         $conexion = openBD();
 
         $sentenciaText = "
-        DELETE FROM usuario_has_juego WHERE usuario_has_juego=:usuario_has_juego;
+        DELETE FROM usuario_has_juego WHERE Usuario_idUsuario=:Usuario_idUsuario;
         ";
         $sentencia =$conexion->prepare($sentenciaText);
         $sentencia->bindParam(":Usuario_idUsuario",$Usuario_idUsuario);
