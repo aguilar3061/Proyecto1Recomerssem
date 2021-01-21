@@ -38,7 +38,7 @@
         "ComprarOferta"=>"BUY OFFER",
         "ComprarOfertaText"=>"Unfortunately, the points to acquire this offer do not reach you",
         "ComprarOfertaText2"=>"This offer has already been purchased previously",
-        "ComprarOfertaText3"=>"Compra realizada con exito",
+        "ComprarOfertaText3"=>"Successful purchase",
         "ModificarPuntosJuego"=>"Modify Game Points:",
         "SaveGame"=>"Save:",
         "JuegoAdmin"=>"GAME",
