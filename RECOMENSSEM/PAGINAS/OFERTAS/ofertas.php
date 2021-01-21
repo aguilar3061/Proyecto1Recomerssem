@@ -170,6 +170,9 @@ $listaOfertasYaCopradas = selectIdOfertaYaAdquiridas($_SESSION['userID']);
 	</div>
 
 
+
+
+
 	<!-- Modal -->
 	<div class="modal fade" id="modalofertacomprada" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
@@ -181,7 +184,7 @@ $listaOfertasYaCopradas = selectIdOfertaYaAdquiridas($_SESSION['userID']);
 					</button>
 				</div>
 				<div class="modal-body">
-					<?php echo $lang['ComprarOfertaText3'] ?>
+					<?php echo $lang['ComprarOfertaText3'] . " id: " . rand(10000, 99999) ;?>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $lang['BtnCerrar'] ?></button>
