@@ -601,6 +601,27 @@
     
     }
 
+    function updateNoticiaSinImagen($id, $titulo, $texto){
+        
+        $conexion = openBD();
+    
+        
+        try{
+            $sentenciaText = "update infonoticia  SET titulo = :titulo, texto = :texto where id = $id";
+            $sentencia = $conexion->prepare($sentenciaText);
+            $sentencia->bindParam(':titulo',$titulo);
+            $sentencia->bindParam(':texto',$texto);
+    
+            $sentencia->execute();
+        
+            $conexion = closeBD();
+        }catch (Exception $e) {
+            echo 'Excepción capturada: ',  $e->getMessage(), "\n";
+        }
+        
+    
+    }
+
     function consultarUsuario($mail,$password){
 
         $conexion = openBD();
