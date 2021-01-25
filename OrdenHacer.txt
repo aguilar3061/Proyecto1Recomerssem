@@ -6,19 +6,13 @@ carlos 	--> ofertas, juegos
 
 
 
-IDIOMA
-arreglar idioma con variable de sesion
-alertas idomas
-cambiar pleas hollder registro
-corregir faltas de ortografia
-
-USUARIOS
+MSG
+admin
 confirmacion eliminar
 
-MSG
-cerar sesion
-admin
 
-OFERTAS 
-codigo aleatorio al congear
-
+MEJORAS PRESENTACION TECNICA
+Titulo de saber en que pagina donde se esta en web 
+Imagen del logo de fondo en los botones principales (naranjas)
+Todos los botones en la web tienen que estar destacados (naranjas)
+La ayuda en la parte de abajo de la web
